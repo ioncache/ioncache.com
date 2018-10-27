@@ -11,81 +11,21 @@
     <meta name="viewport" content="width = device-width, user-scalable = no, initial-scale = 1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
-
-    <style>
-      body {
-        font-family: 'Courier New', Courier, monospace;
-      }
-
-      .bounce {
-        animation: bounce 2s infinite;
-        display: inline-block;
-      }
-
-      .bounce:nth-child(2) {
-        animation-delay: 0.15s;
-      }
-
-      .bounce:last-child {
-        animation-delay: 0.3s;
-      }
-
-      .dots {
-        cursor: pointer;
-      }
-
-      .dot-content {
-        letter-spacing: -3px;
-      }
-
-      .inline {
-        display: inline-block;
-      }
-
-      .main-container {
-        display: flex;
-
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      .main-container [data-balloon]:after {
-        /* !important here as the imported tooltip css is also using !important...
-           feels bad, I should use a different tooltip css library... or roll my own
-        */
-        font-family: 'Courier New', Courier, monospace !important;
-      }
-
-      @keyframes bounce {
-        0% {
-          color: #0074D9;
-        }
-        25% {
-          animation-timing-function: ease-in;
-          transform: translateY(-5px);
-        }
-        40% {
-          animation-timing-function: ease-out;
-          transform: translateY(0);
-        }
-        100% {
-          color: black;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
 
   <body>
-  <div class="main-container">
+    <div class="main-container">
       <div class="inline">Nothing to see here. Move along</div>
+
       <div class="dots inline" data-balloon="I'm not kidding." data-balloon-pos="down">
         <div class="dot-content">
-          <div class="bounce">.</div><div class="bounce">.</div><div class="bounce">.</div>
-        </div>
+          <a href="resume.html">
+            <div class="bounce">.</div><div class="bounce">.</div><div class="bounce">.</div>
+          </button>
+        </a>
       </div>
     </div>
   </body>
 </html>
-

@@ -1,0 +1,61 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+  display: inline-block;
+}
+
+.bounce:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.bounce:last-child {
+  animation-delay: 0.3s;
+}
+
+.dots {
+  cursor: pointer;
+}
+
+.dot-content {
+  letter-spacing: -3px;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.main-container {
+  display: flex;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main-container [data-balloon]:after {
+  /* !important here as the imported tooltip css is also using !important...
+     feels bad, I should use a different tooltip css library... or roll my own
+  */
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+@keyframes bounce {
+  0% {
+    color: #0074D9;
+  }
+  25% {
+    animation-timing-function: ease-in;
+    transform: translateY(-5px);
+  }
+  40% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+  100% {
+    color: black;
+  }
+}
