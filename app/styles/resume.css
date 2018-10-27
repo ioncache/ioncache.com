@@ -82,12 +82,12 @@ i {
 
 .main-area {
   display: grid;
-  grid-template-columns: 450px 450px;
+  grid-template-columns: 600px 600px;
   grid-template-rows: 25% 60% 15%;
   height: 100%;
   margin: 0 auto;
   position: relative;
-  width: 900px;
+  width: 1200px;
 }
 
 .main-area > header,
@@ -119,6 +119,7 @@ i {
   overflow-x: hidden;
   overflow-y: auto;
   height: calc(100% - 30px);
+  padding: 0 15px;
   width: 100%;
 }
 
@@ -222,7 +223,6 @@ i {
   display: flex;
   flex-direction: column;
   height: calc(100% - 55px);
-  justify-content: space-between;
 }
 
 .contact li {
@@ -263,7 +263,7 @@ i {
   line-height: 1.2em;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   body {
     height: auto;
   }
@@ -285,6 +285,10 @@ i {
     overflow-y: auto;
     height: auto;
     width: 100%;
+  }
+
+  .toggle-fill-grid {
+    display: none;
   }
 
   /* change order of sections at this breakpoint */
