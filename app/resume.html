@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>Résumé of Mark Jubenville</title>
 
@@ -9,19 +9,220 @@
     <meta name="author" content="Mark Jubenville <ioncache@gmail.com>">
     <meta name="description" content="Résumé of Mark Jubenville">
     <meta name="keywords" content="résumé, CV, curriculum vitae, work historu, synopsis">
-    <meta name="viewport" content="width = device-width, user-scalable = no, initial-scale = 1.0">
+    <meta name="viewport" content="width = device-width, user-scalable = yes, initial-scale = 1.0">
 
+    <link href="https://unpkg.com/ionicons@4.4.6/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/resume.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   </head>
 
   <body>
-    <section class="main-area">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-    </section>
+    <div class="main-area">
+      <header class="contact">
+        <h1>Mark Jubenville</h1>
+
+        <div class="section-content">
+          <ul>
+            <li>
+               <a href="mailto:ioncache@gmail.com"><i class="icon ion-md-mail"></i> ioncache@gmail.com</a>
+            </li>
+
+            <li>
+              <a href="https://ioncache.com"><i class="icon ion-md-globe"></i> ioncache.com</a>
+            </li>
+
+            <li>
+              <a href="https://github.com/ioncache"><i class="icon ion-logo-octocat"></i> github.com/ioncache</a>
+            </li>
+          </ul>
+
+          <p class="reference-text">References available upon request.</p>
+        </div>
+      </header>
+
+      <section class="about">
+        <button aria-label="Toggle Section" class="toggle-fill-grid">
+          <i class="icon ion-md-expand"></i>
+          <i class="icon ion-md-contract"></i>
+        </button>
+
+        <h2>
+          Stuff About Me
+        </h2>
+        <div class="section-content">
+          <p>
+            Main focus of experience centered on web-based javascript application development.
+            From designing and implementing UI, to implementing frontend javascript, to writing back-end APIs or
+            applications for interacting with front-end code.
+          </p>
+
+          <p>
+            Comfortable working on a team or in a more independent manner.
+          </p>
+
+          <p>
+            Looking for a company with a modern approach to application development and which can give me an opportunity
+            to explore new ideas, learn new technologies and utilize my skill set.
+          </p>
+        </div>
+      </section>
+
+      <section class="skills">
+        <button aria-label="Toggle Section" class="toggle-fill-grid">
+          <i class="icon ion-md-expand"></i>
+          <i class="icon ion-md-contract"></i>
+        </button>
+
+        <h2>Skills</h2>
+
+        <div class="section-content skills-chart-container">
+          <canvas id="skillsChart"></canvas>
+        </div>
+      </section>
+
+      <section class="experience">
+        <button aria-label="Toggle Section" class="toggle-fill-grid">
+          <i class="icon ion-md-expand"></i>
+          <i class="icon ion-md-contract"></i>
+        </button>
+
+        <h2>Experience</h2>
+
+        <div class="section-content">
+          <div class="experience-details">
+            <h3>
+              Web Developer <br>
+              OANDA, Toronto, Canada <br>
+              August 2011 - present
+            </h3>
+
+            <p>
+              Frontend Javascript, HTML/CSS application development on a number internal customer and employee management web applications.
+            </p>
+
+            <p>
+              UI design and implementation for new software, along with unifying the UI across a number of products.
+            </p>
+
+            <p>
+              Exploration and investigation of various new web technologies and frameworks (Backbone, Knockout, Ember, Sammy, etc.) to inform direction of new application development.
+            </p>
+
+            <p>
+              Backend API and application development to support new and legacy applications.
+            </p>
+          </div>
+
+          <div class="experience-details">
+            <h3>
+              Web Developer <br>
+              Raybec Communications, Toronto, Canada <br>
+              March 2008 - August 2011
+            </h3>
+
+            <p>
+              Development on SalesLink (www.mysaleslink.com), a one-to-one email relationship application. A Javascript application using a combination of AJAX and serverside (Perl) code for interactivity.
+            </p>
+
+            <p>
+              Development of smaller-scale web-based applications for clients.
+            </p>
+
+            <p>
+              Maintenance of and modifi cations to legacy application software, ranging in size and scope from database population and cron job creation to more full-fl edged variable data PDF generation software.
+            </p>
+          </div>
+
+          <div class="experience-details">
+            <h3>
+              Production Coordinator <br>
+              Raybec Communications, Toronto, Canada <br>
+              September 2004 - March 2008
+            </h3>
+
+            <p>
+              Merging of large data sets with creative templates to create large variable record PDF fi les. Projects completed using both purchased variable data software and in-house developed PDF generation scripts.
+            </p>
+
+            <p>
+              Design of marketing material, including early mock-ups and working closely with clients to fi nalize their design needs.
+            </p>
+
+            <p>
+              Production of all marketing material on in-house production equipment (mainly Xerox/Fiery hardware), including alignment, colour correction and hardware maintenance.
+            </p>
+          </div>
+
+          <div class="experience-details">
+            <h3>
+              Graphic Designer <br>
+              Data ImageNet, Toronto, Canada <br>
+              December 2000 - September 2004
+            </h3>
+
+            <p>
+              Design of print-ready marketing material, including business cards, logos, newsletters, posters, etc.
+            </p>
+
+            <p>
+              Prepress work on client-supplied fi les to ensure print quality, colour consistency and overall adherence to client supplied criteria.
+            </p>
+
+            <p>
+              Low-level variable data programming for merging data with predefi ned document templates.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="education">
+        <button aria-label="Toggle Section" class="toggle-fill-grid">
+          <i class="icon ion-md-expand"></i>
+          <i class="icon ion-md-contract"></i>
+        </button>
+
+        <h2>Education</h2>
+
+        <div class="section-content">
+          <p>University of Toronto</p>
+          <p>Computer Science</p>
+          <p>1996-1998</p>
+        </div>
+      </section>
+
+      <section class="interests">
+        <button aria-label="Toggle Section" class="toggle-fill-grid">
+          <i class="icon ion-md-expand"></i>
+          <i class="icon ion-md-contract"></i>
+        </button>
+
+        <h2>Interests / Projects</h2>
+
+        <div class="section-content">
+          <ul>
+            <li>
+              ioncache.com website: contains the source for this page <br>
+              <a href="http://github.com/ioncache/ioncache.com/"><i class="icon ion-md-globe"></i> github.com/ioncache/ioncache.com</a>
+            <li>
+              Tag-Handler: a jQuery plugin used for managing tag-type metadata; wow this is old, one of the first bits of jQuery I ever wrote <br>
+              <a href="http://ioncache.github.com/Tag-Handler/"><i class="icon ion-md-globe"></i> ioncache.github.com/Tag-Handler</a>
+            </li>
+            <li>
+              CPAN Distributions - I don't do a lot of perl anymore really <br>
+              DBIx::Class::AuditLog: simple database action history logging <br>
+              <a href="https://metacpan.org/module/DBIx::Class::AuditLog"><i class="icon ion-md-globe"></i> metacpan.org/module/DBIx::Class::AuditLog</a> <br>
+              Plack::Middleware::HTMLify: middleware to convert a non-html web page to html <br>
+              <a href="https://metacpan.org/module/Plack::Middleware::HTMLify"><i class="icon ion-md-globe"></i> metacpan.org/module/Plack::Middleware::HTMLify</a>
+            </li>
+            <li>
+              Chess: member of the Chess Federation of Canada
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </body>
+  <script src="scripts/resume.js"></script>
 </html>

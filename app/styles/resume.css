@@ -1,15 +1,32 @@
+/*
+  CSS tested in Chrome/Firefox/Edge.
+  (yes this indicates I'm developing this on a Windows machine, don't hate me
+  for it, normally I'd use a Max)
+  Definitely not going to work in IE.
+  Safari?  Too lazy to break out the laptop to test.
+  Lazy programmers are good programmers right?
+*/
+
+/*
+  Don't do this, web fonts are the worst.
+  So slow.
+  But it's nice to have some font options occasionally.
+*/
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush|Russo+One|Source+Code+Pro');
+
 body {
-  background-color: var(--color-white);
-  font-family: sans-serif;
+  background-color: var(--color-black);
+  font-family: 'Source Code Pro', monospace;;
   font-size: 14px;
   height: 100vh;
   margin: 0;
   padding: 0;
   width: 100vw;
 
-  --color-black: #000000;
+  --color-black: #121010;
   --color-cream: #f0e9da;
-  --color-dark-green: #14160b;
+  --color-dark-green: #181b0d;
+  --color-dark-orange: #864c00;
   --color-green: #27403D;
   --color-light-green: #48725C;
   --color-orange: #D88F2E;
@@ -19,32 +36,277 @@ body {
   --background-color-light: var(--color-cream);
   --font-color-dark: var(--color-dark-green);
   --font-color-light: var(--color-cream);
+  --font-color-link-dark: var(--color-black);
+  --font-color-link-light: var(--color-cream);
 }
 
+/******************/
+/* General Styles */
+/******************/
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--font-color-link-light);
+  text-decoration: none;
+  padding: 4px;
+  transition: background-color 200ms linear, color 200ms linear;
+}
+
+a:hover {
+  background-color:  var(--color-orange);
+  color: var(--font-color-link-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Russo One', 'Helvatica', 'Arial', sans-serif;
+  margin: 0;
+}
+
+h2 {
+  border-bottom: 1px solid var(--color-orange);
+  text-align: right;
+  width: 100%;
+}
+
+i {
+  position: relative;
+  top: 1px;
+}
+
+/***************/
+/* Grid Styles */
+/***************/
 
 .main-area {
   display: grid;
   grid-template-columns: 450px 450px;
-  grid-template-rows: 33% 33% 34%;
+  grid-template-rows: 25% 60% 15%;
   height: 100%;
   margin: 0 auto;
+  position: relative;
   width: 900px;
 }
 
-.main-area > div {
+.main-area > header,
+.main-area > section {
   padding: 15px;
+  position: relative;
 }
 
-.main-area > div:nth-child(1),
-.main-area > div:nth-child(4),
-.main-area > div:nth-child(5) {
+.main-area > header,
+.main-area > section:nth-child(4),
+.main-area > section:nth-child(5) {
   background-color: var(--background-color-dark);
   color: var(--font-color-light);
 }
 
-.main-area > div:nth-child(2),
-.main-area > div:nth-child(3),
-.main-area > div:nth-child(6) {
+.main-area > section:nth-child(2),
+.main-area > section:nth-child(3),
+.main-area > section:nth-child(6) {
   background-color: var(--background-color-light);
   color: var(--font-color-dark);
+}
+
+.main-area > section h2 {
+  display: inline-block;
+  height: 30px;
+}
+
+.main-area .section-content {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: calc(100% - 30px);
+  width: 100%;
+}
+
+/******************************/
+/* Toggle section size styles */
+/******************************/
+
+.main-area > section.fill-grid {
+  background-color: var(--background-color-light);
+  color: var(--font-color-dark);
+  font-size: 1.3em;
+  height: calc(100% - 150px);
+  left: 0;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  z-index: 1;
+}
+
+.main-area > header.fill-grid {
+  height: 150px;
+  left: 0;
+  padding: 15px 30px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.main-area > header.fill-grid h1 {
+  font-size: 30px;
+  height: auto;
+}
+
+.main-area > header.fill-grid ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-area > header.fill-grid .section-content {
+  display: block;
+}
+
+.main-area > header.fill-grid .reference-text {
+  margin: 0;
+}
+
+.main-area > section.fill-grid .section-content {
+  padding: 0 50px;
+}
+
+.toggle-fill-grid {
+  cursor: pointer;
+  left: 15px;
+  padding: 4px;
+  position: absolute;
+  top: 15px;
+  transition: background-color 200ms linear, color 200ms linear;
+}
+
+.toggle-fill-grid:hover {
+  background-color: var(--color-orange);
+  color: var(--font-color-dark);
+}
+
+.toggle-fill-grid .ion-md-contract {
+  display: none;
+}
+
+.fill-grid .toggle-fill-grid  .ion-md-contract {
+  display: inline;
+}
+
+.fill-grid .toggle-fill-grid  .ion-md-expand {
+  display: none;
+}
+
+/***************************/
+/* Section specific styles */
+/***************************/
+
+/* contact / header section */
+
+.contact h1 {
+  display: inline-block;
+  font-family: 'Alex Brush', cursive;
+  font-size: 58px;
+  height: 55px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.contact .reference-text {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact .section-content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 55px);
+  justify-content: space-between;
+}
+
+.contact li {
+  margin-bottom: 20px;
+}
+
+.contact ul {
+  display: block;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 200px;
+
+}
+
+/* experience section */
+.experience .experience-details {
+  margin-top: 15px;
+}
+
+.experience h3 {
+  font-size: 14px;
+}
+
+.experience p {
+  margin-left: 15px;
+}
+
+/* interests section */
+
+.interests a {
+  color: var(--font-color-link-dark);
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.interests li {
+  line-height: 1.2em;
+}
+
+@media (max-width: 900px) {
+  body {
+    height: auto;
+  }
+
+  .main-area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .main-area > header,
+  .main-area > section {
+    padding: 15px 30px;
+  }
+
+  .main-area .section-content {
+    overflow-x: auto;
+    overflow-y: auto;
+    height: auto;
+    width: 100%;
+  }
+
+  /* change order of sections at this breakpoint */
+
+  .skills {
+    order: 4;
+  }
+
+  .experience {
+    order: 3;
+  }
+
+  .education {
+    order: 5;
+  }
+
+  .interests {
+    order: 6;
+  }
+
+  .contact h1 {
+    font-size: 38px;
+    height: auto;
+  }
 }
