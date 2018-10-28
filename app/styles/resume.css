@@ -83,7 +83,7 @@ i {
 .main-area {
   display: grid;
   grid-template-columns: 600px 600px;
-  grid-template-rows: 25% 60% 15%;
+  grid-template-rows: 260px minmax(300px, calc(100% - 460px)) 200px;
   height: 100%;
   margin: 0 auto;
   position: relative;
