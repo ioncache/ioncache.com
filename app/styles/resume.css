@@ -62,6 +62,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Russo One', 'Helvatica', 'Arial', sans-serif;
+  font-weight: 100;
   margin: 0;
 }
 
@@ -109,14 +110,15 @@ i {
 
 .main-area > header,
 .main-area > section:nth-child(4),
-.main-area > section:nth-child(5) {
+.main-area > section:nth-child(5),
+.main-area > section:nth-child(6) {
   background-color: var(--background-color-dark);
   color: var(--font-color-light);
 }
 
 .main-area > section:nth-child(2),
 .main-area > section:nth-child(3),
-.main-area > section:nth-child(6) {
+.main-area > section:nth-child(7) {
   background-color: var(--background-color-light);
   color: var(--font-color-dark);
 }
@@ -283,6 +285,12 @@ i {
   line-height: 1.2em;
 }
 
+
+/* print version of skill ssection */
+.skills-print {
+  display: none;
+}
+
 /* change view on smaller width displays or for print */
 
 @media print, (max-width: 1200px) {
@@ -341,11 +349,20 @@ i {
   }
 }
 
+@page {
+  margin: 30px;
+}
+
 @media print {
   a,
   body {
-    color: black !important; /* don't use important, you're just being lazy */
+    color: var(--color-black);
     font-size: 12px;
+  }
+
+  /* display flex and grid do not work well in print media */
+  .main-area {
+    display: block;
   }
 
   .main-area > header,
@@ -353,18 +370,56 @@ i {
   .main-area > section:nth-child(3),
   .main-area > section:nth-child(4),
   .main-area > section:nth-child(5),
-  .main-area > section:nth-child(6) {
+  .main-area > section:nth-child(6),
+  .main-area > section:nth-child(7) {
     background-color: white;
-    color: black;
+    color: var(--color-black);
+  }
+
+  .main-area .skills {
+    display: none;
+  }
+
+  .main-area .skills-print {
+    display: block;
+  }
+
+  .main-area .skills-print .section-content {
+    padding: 30px;
+  }
+
+  .main-area .skills-print table,
+  .main-area .skills-print tr {
+    width: 100%;
+  }
+
+  .main-area .skills-print td {
+    padding-bottom: 10px;
+  }
+
+  .main-area .skills-print tr td:first-child {
+    font-weight: bold;
+    width: 100px;
+  }
+
+  .main-area .skills-print tfoot {
+    font-weight: bold;
+  }
+
+  .main-area .skills-print tfoot tr td:nth-child(3) {
+    text-align: center;
+  }
+
+  .main-area .skills-print tfoot tr td:last-child {
+    text-align: right;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: #555555;
+    page-break-after: avoid;
+    color: var(--color-dark-green);
   }
 
-  .experience .section-content > .experience-details:first-child,
-  .skills {
-    break-after: always;
+  .experience {
     page-break-after: always;
   }
 }
