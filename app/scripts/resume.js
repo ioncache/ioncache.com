@@ -40,7 +40,7 @@ let myChart = new Chart(ctx, {
           'SQL',
         ],
         datasets: [{
-            data: [7, 8, 8, 8, 8, 8, 6, 7, 1, 5],
+            data: [7, 8, 8, 8, 8, 7, 6, 8, 1, 5],
             backgroundColor: [
               'rgba(141,211,199, 0.6)',
               'rgba(255,255,179, 0.6)',

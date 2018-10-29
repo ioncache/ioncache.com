@@ -16,7 +16,7 @@
 
 body {
   background-color: var(--color-black);
-  font-family: 'Source Code Pro', monospace;;
+  font-family: 'Source Code Pro', monospace;
   font-size: 14px;
   height: 100vh;
   margin: 0;
@@ -71,6 +71,17 @@ h2 {
   width: 100%;
 }
 
+h4 {
+  color: var(--color-green);
+  font-weight: lighter;
+  margin-top: 15px;
+}
+
+h4 span {
+  font-family: 'Source Code Pro', monospace;
+  padding-left: 8px;
+}
+
 i {
   position: relative;
   top: 1px;
@@ -83,7 +94,7 @@ i {
 .main-area {
   display: grid;
   grid-template-columns: 600px 600px;
-  grid-template-rows: 260px minmax(300px, calc(100% - 460px)) 200px;
+  grid-template-rows: 335px minmax(300px, calc(100% - 535px)) 200px;
   height: 100%;
   margin: 0 auto;
   position: relative;
@@ -115,6 +126,10 @@ i {
   height: 30px;
 }
 
+.main-area > section li {
+  margin-bottom: 10px;
+}
+
 .main-area .section-content {
   overflow-x: hidden;
   overflow-y: auto;
@@ -137,6 +152,10 @@ i {
   top: 150px;
   width: 100%;
   z-index: 1;
+}
+
+.main-area > section.fill-grid a {
+  color: var(--font-color-link-dark);
 }
 
 .main-area > header.fill-grid {
