@@ -263,7 +263,9 @@ i {
   line-height: 1.2em;
 }
 
-@media (max-width: 1200px) {
+/* change view on smaller width displays or for print */
+
+@media print, (max-width: 1200px) {
   body {
     height: auto;
   }
@@ -312,5 +314,37 @@ i {
   .contact h1 {
     font-size: 38px;
     height: auto;
+  }
+
+  .main-area .section-content.skills-chart-container {
+    height: 300px;
+  }
+}
+
+@media print {
+  a,
+  body {
+    color: black !important; /* don't use important, you're just being lazy */
+    font-size: 12px;
+  }
+
+  .main-area > header,
+  .main-area > section:nth-child(2),
+  .main-area > section:nth-child(3),
+  .main-area > section:nth-child(4),
+  .main-area > section:nth-child(5),
+  .main-area > section:nth-child(6) {
+    background-color: white;
+    color: black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #555555;
+  }
+
+  .experience .section-content > .experience-details:first-child,
+  .skills {
+    break-after: always;
+    page-break-after: always;
   }
 }
