@@ -38,6 +38,9 @@ body {
   --font-color-light: var(--color-cream);
   --font-color-link-dark: var(--color-black);
   --font-color-link-light: var(--color-cream);
+
+  /* ctip variable overrides */
+  --ctip-focus:  0px 0px 0px 1px var(--color-orange);
 }
 
 /******************/
@@ -173,6 +176,7 @@ i {
 .main-area > header.fill-grid h1 {
   font-size: 30px;
   height: auto;
+  margin-bottom: 20px;
 }
 
 .main-area > header.fill-grid ul {
@@ -230,7 +234,7 @@ i {
   font-family: 'Alex Brush', cursive;
   font-size: 58px;
   height: 55px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: center;
   width: 100%;
 }
@@ -360,6 +364,18 @@ i {
     font-size: 12px;
   }
 
+  .contact h1 {
+    margin-bottom: 20px;
+  }
+
+  .contact li {
+    margin-bottom: 15px;
+  }
+
+  .contact .reference-text {
+    margin: 0;
+  }
+
   /* display flex and grid do not work well in print media */
   .main-area {
     display: block;
@@ -416,10 +432,11 @@ i {
 
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
+    page-break-inside: avoid;
     color: var(--color-dark-green);
   }
 
-  .experience {
+  .skills-print {
     page-break-after: always;
   }
 }
