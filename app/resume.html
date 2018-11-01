@@ -17,12 +17,43 @@
     <link rel="stylesheet" href="styles/resume.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="scripts/theme-picker.js"></script>
   </head>
 
   <body>
+    <script>
+      /* setup page theme before the rest of the content loads so that there is no flash of content from
+         deferring the class change until later
+      */
+      if (window.getTheme && window.setTheme) {
+        setTheme(getTheme() || 'default');
+      }
+    </script>
+
     <div class="main-area">
       <header class="contact">
         <h1>Mark Jubenville</h1>
+
+        <div
+          aria-label="Page Settings"
+          role="button"
+          class="page-settings"
+          data-ctip="Page Settings"
+          data-ctip-position="right"
+        >
+          <i class="icon ion-md-settings"></i>
+          <div class="panel">
+            <h5>Here be settings.</h5>
+
+            <label for="themePicker">Change Theme</label>
+            <select id="themePicker" class="theme-picker">
+              <option value="" disabled selected>Choose Theme</option>
+              <option value="default">Default</option>
+              <option value="solarized">Solarized</option>
+              <option value="zenburn">Zenburn</option>
+            <select>
+          </div>
+        </div>
 
         <div class="section-content">
           <ul>
@@ -291,7 +322,7 @@
                   React
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(217,217,217, 0.6); border: 1px solid rgb(217,217,217); width: 10%;">&nbsp;</div>
+                  <div style="background-color: rgba(204,235,197, 0.6); border: 1px solid rgb(204,235,197); width: 10%;">&nbsp;</div>
                 </td>
               </tr>
 

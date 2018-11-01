@@ -1,6 +1,16 @@
 'use strict';
 
-/* setup expand/collapse toggle */
+/*
+  NOTE: normally I'd minify/uglify all resources, but since this is partly a code
+        exercise, I've left it all as is for easy reading
+*/
+
+/*
+  setup expand/collapse toggle
+
+  add a single event listener and only trigger the toggle
+  if the target is one of the toggle buttons
+*/
 
 document.querySelector('.main-area').addEventListener('click', (e) => {
   let parentSection;
@@ -20,7 +30,50 @@ document.querySelector('.main-area').addEventListener('click', (e) => {
   }
 });
 
-/* setup the skills chart */
+/* setup page settings toggle */
+document.querySelector('.page-settings').addEventListener('click', (e) => {
+  if (
+    e.target.classList.contains('ion-md-settings') ||
+    e.target.classList.contains('page-settings')
+  ) {
+    document.querySelector('.page-settings').classList.toggle('show');
+  }
+});
+
+document.body.addEventListener('click', (e) => {
+  /* remove the show class from page settings whenever clicking anywhere other than
+     the page settings button or inside the page settings container
+  */
+
+  // FIXME: there must be a better way to do this
+  if (
+    !e.target.classList.contains('ion-md-settings') &&
+    !e.target.classList.contains('page-settings') &&
+    !e.target.classList.contains('panel') &&
+    (
+      !e.target.parentElement ||
+      (e.target.parentElement &&
+      !e.target.parentElement.classList.contains('panel'))
+    ) &&
+    (
+      !e.target.parentElement.parentElement ||
+      (e.target.parentElement.parentElement &&
+      !e.target.parentElement.parentElement.classList.contains('panel'))
+    )
+  ) {
+    document.querySelector('.page-settings').classList.remove('show');
+  }
+});
+
+/*
+  setup the skills chart
+
+  using chartjs is probably overkill for such a simple chart
+
+  especially since I implemenmted a pure css version for use in print
+
+  to be fair the chartjs one is a bit nicer, but it would all be doable in css only if desired
+*/
 
 let ctx = document.getElementById("skillsChart").getContext('2d');
 
@@ -50,10 +103,10 @@ let myChart = new Chart(ctx, {
               'rgba(253,180,98, 0.6)',
               'rgba(179,222,105, 0.6)',
               'rgba(252,205,229, 0.6)',
-              'rgba(217,217,217, 0.6)',
-              'rgba(188,128,189, 0.6)',
               'rgba(204,235,197, 0.6)',
-              'rgba(255,237,111, 0.6)'
+              'rgba(188,128,189, 0.6)',
+              'rgba(255,237,111, 0.6)',
+              'rgba(217,217,217, 0.6)'
             ],
             borderColor: [
               'rgb(141,211,199)',
@@ -64,10 +117,10 @@ let myChart = new Chart(ctx, {
               'rgb(253,180,98)',
               'rgb(179,222,105)',
               'rgb(252,205,229)',
-              'rgb(217,217,217)',
-              'rgb(188,128,189)',
               'rgb(204,235,197)',
-              'rgb(255,237,111)'
+              'rgb(188,128,189)',
+              'rgb(255,237,111)',
+              'rgb(217,217,217)'
             ],
             borderWidth: 1
         }]

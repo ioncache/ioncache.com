@@ -1,9 +1,14 @@
 /*
+  NOTE: normally I'd minify/uglify all resources, but since this is partly a code
+        exercise, I've left it all as is for easy reading
+*/
+
+/*
   CSS tested in Chrome/Firefox/Edge.
   (yes this indicates I'm developing this on a Windows machine, don't hate me
-  for it, normally I'd use a Mac)
+  for it, normally I'd use a Mac for web development)
   Definitely not going to work in IE.
-  Safari?  Too lazy to break out the laptop to test.
+  Safari? Too lazy to break out the laptop to test.
   Lazy programmers are good programmers right?
 */
 
@@ -23,6 +28,11 @@ body {
   padding: 0;
   width: 100vw;
 
+  /******************/
+  /* colour palette */
+  /******************/
+
+  /* base theme colours */
   --color-black: #121010;
   --color-cream: #f0e9da;
   --color-dark-green: #181b0d;
@@ -32,15 +42,64 @@ body {
   --color-orange: #D88F2E;
   --color-white: #F5F5F2;
 
+  /* solarized theme colours */
+  --solarized-base0: #808080;
+  --solarized-base03: #1c1c1c;
+  --solarized-base3: #ffffd7;
+  --solarized-magenta: #af005f;
+  --solarized-orange: #e0975d;
+  --solarized-violet: #5f5faf;
+  --solarized-yellow: #af8700;
+
+  /* zenburn theme colours */
+  --zenburn-dark-green: #35473e;
+  --zenburn-dark-grey: #3f3f3f;
+  --zenburn-dark-pink: #cc9393;
+  --zenburn-green: #709080;
+  --zenburn-light-tan: #dcdccc;
+  --zenburn-pink: #dca3a3;
+  --zenburn-tan: #f0dfaf;
+
+  /*******************/
+  /* property styles */
+  /*******************/
+
   --background-color-dark: var(--color-dark-green);
   --background-color-light: var(--color-cream);
   --font-color-dark: var(--color-dark-green);
   --font-color-light: var(--color-cream);
   --font-color-link-dark: var(--color-black);
   --font-color-link-light: var(--color-cream);
+  --highlight-color: var(--color-orange);
 
   /* ctip variable overrides */
   --ctip-focus:  0px 0px 0px 1px var(--color-orange);
+}
+
+.theme-solarized {
+  --background-color-dark: var(--solarized-base03);
+  --background-color-light: var(--solarized-base3);
+  --font-color-dark: var(--solarized-base0);
+  --font-color-light: var(--solarized-base0);
+  --font-color-link-dark: var(--solarized-magenta);
+  --font-color-link-light: var(--solarized-magenta);
+  --highlight-color: var(--solarized-orange);
+
+  /* ctip variable overrides */
+  --ctip-focus:  0px 0px 0px 1px var(--solarized-orange);
+}
+
+.theme-zenburn {
+  --background-color-dark: var(--zenburn-dark-grey);
+  --background-color-light: var(--zenburn-light-tan);
+  --font-color-dark: var(--zenburn-dark-grey);
+  --font-color-light: var(--zenburn-light-tan);
+  --font-color-link-dark: var(--zenburn-dark-green);
+  --font-color-link-light: var(--zenburn-tan);
+  --highlight-color: var(--zenburn-pink);
+
+  /* ctip variable overrides */
+  --ctip-focus:  0px 0px 0px 1px var(--zenburn-pink);
 }
 
 /******************/
@@ -59,7 +118,7 @@ a {
 }
 
 a:hover {
-  background-color:  var(--color-orange);
+  background-color:  var(--highlight-color);
   color: var(--font-color-link-dark);
 }
 
@@ -70,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  border-bottom: 1px solid var(--color-orange);
+  border-bottom: 1px solid var(--highlight-color);
   text-align: right;
   width: 100%;
 }
@@ -207,7 +266,7 @@ i {
 }
 
 .toggle-fill-grid:hover {
-  background-color: var(--color-orange);
+  background-color: var(--highlight-color);
   color: var(--font-color-dark);
 }
 
@@ -260,7 +319,58 @@ i {
   margin: 0 auto;
   padding: 0;
   width: 200px;
+}
 
+.theme-picker {
+  z-index: 2;
+}
+
+.page-settings {
+  cursor: pointer;
+  left: 15px;
+  padding: 4px;
+  position: absolute;
+  top: 15px;
+  transition: background-color 200ms linear, color 200ms linear;
+}
+
+.page-settings:hover {
+  background-color: var(--highlight-color);
+  color: var(--font-color-dark);
+}
+
+.page-settings .panel {
+  background-color: #252525;
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4);
+  color: var(--font-color-light);
+  font-size: 12px;
+  height: 0;
+  opacity: 0;
+  overflow-y: hidden;
+  padding: 15px;
+  position: absolute;
+  right: -210px;
+  transform-origin: top left;
+  transition: height 300ms ease-out;
+  top: 2px;
+  width: 200px;
+  z-index: 1;
+}
+
+.page-settings.show .panel {
+  height: 300px;
+  opacity: 1;
+}
+
+.page-settings .panel h5 {
+  font-size: 13px;
+  margin: 0 auto 15px;
+  text-align: center;
+}
+
+.page-settings .panel label {
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 /* experience section */
