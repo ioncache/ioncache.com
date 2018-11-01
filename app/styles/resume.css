@@ -549,4 +549,8 @@ i {
   .skills-print {
     page-break-after: always;
   }
+
+  .page-settings, .page-settings .panel {
+    display: none;
+  }
 }
