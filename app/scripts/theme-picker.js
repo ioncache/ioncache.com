@@ -53,7 +53,7 @@ function addThemePickerListener() {
 
 /*
   wait until the page has finished loaded before adding the listener on the theme picker dropdown
-  so that the elements exists by the time the listener is added
+  so that the elements exist by the time the listener is added
 */
 if (window.onload) {
     let currentOnloadEvent = window.onload;

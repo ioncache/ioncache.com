@@ -70,7 +70,7 @@ document.body.addEventListener('click', (e) => {
 
   using chartjs is probably overkill for such a simple chart
 
-  especially since I implemenmted a pure css version for use in print
+  especially since I implemented a pure css version for use in print
 
   to be fair the chartjs one is a bit nicer, but it would all be doable in css only if desired
 */
@@ -156,7 +156,12 @@ let myChart = new Chart(ctx, {
           label: function(tooltipItem, data) {
             var dataValue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || 0;
 
-            return `: ${dataValue <=3 ? 'Weak' :dataValue >= 4 && dataValue <= 7 ? 'Intermediate' : 'Strong'}` ;
+            let tooltipString = `   ${dataValue <=3 ? 'Weak' : dataValue >= 4 && dataValue <= 7 ? 'Intermediate' : 'Strong'}`;
+
+            if (tooltipItem.yLabel === 'React') {
+              tooltipString += '; just started learning React';
+            }
+            return tooltipString;
           }
         }
       }
