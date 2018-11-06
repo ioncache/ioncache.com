@@ -81,6 +81,7 @@ let myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
         labels: [
+          'AngularJS',
           'Angular',
           'CSS',
           'HTML',
@@ -93,9 +94,10 @@ let myChart = new Chart(ctx, {
           'SQL',
         ],
         datasets: [{
-            data: [7, 8, 8, 8, 8, 7, 6, 8, 1, 5],
+            data: [7, 3, 8, 8, 8, 8, 7, 6, 8, 1, 5],
             backgroundColor: [
               'rgba(141,211,199, 0.6)',
+              'rgba(116, 241, 215, 0.6)',
               'rgba(255,255,179, 0.6)',
               'rgba(190,186,218, 0.6)',
               'rgba(251,128,114, 0.6)',
@@ -105,11 +107,11 @@ let myChart = new Chart(ctx, {
               'rgba(252,205,229, 0.6)',
               'rgba(204,235,197, 0.6)',
               'rgba(188,128,189, 0.6)',
-              'rgba(255,237,111, 0.6)',
-              'rgba(217,217,217, 0.6)'
+              'rgba(255,237,111, 0.6)'
             ],
             borderColor: [
               'rgb(141,211,199)',
+              'rgba(116, 241, 215, 1)',
               'rgb(255,255,179)',
               'rgb(190,186,218)',
               'rgb(251,128,114)',
@@ -119,8 +121,7 @@ let myChart = new Chart(ctx, {
               'rgb(252,205,229)',
               'rgb(204,235,197)',
               'rgb(188,128,189)',
-              'rgb(255,237,111)',
-              'rgb(217,217,217)'
+              'rgb(255,237,111)'
             ],
             borderWidth: 1
         }]
