@@ -3,7 +3,7 @@
 
   @param{string} name The name of the theme, eg, theme-solarized
 
-  @returns{void} This function has no return value.
+  @returns{void}
 */
 function setTheme(newTheme) {
   const currentTheme = getTheme();
@@ -37,7 +37,7 @@ function getTheme() {
 /**
   addThemePickerListener - sets up an event listener for changes on the theme-picker dropdown
 
-  @returns{void} This function has no return value.
+  @returns{void}
 */
 function addThemePickerListener() {
   const themePicker = document.querySelector('.theme-picker');
