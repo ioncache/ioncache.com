@@ -52,7 +52,7 @@ function addThemePickerListener() {
 }
 
 /*
-  wait until the page has finished loaded before adding the listener on the theme picker dropdown
+  wait until the page has finished loading before adding the listener on the theme picker dropdown
   so that the elements exist by the time the listener is added
 */
 if (window.onload) {
