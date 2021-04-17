@@ -325,21 +325,28 @@ i {
   z-index: 2;
 }
 
-.page-settings {
+.panel-container {
   cursor: pointer;
   left: 15px;
   padding: 4px;
   position: absolute;
-  top: 15px;
   transition: background-color 200ms linear, color 200ms linear;
 }
 
-.page-settings:hover {
+.page-settings {
+  top: 15px;
+}
+
+.page-info {
+  top: 45px;
+}
+
+.panel-container:hover {
   background-color: var(--highlight-color);
   color: var(--font-color-dark);
 }
 
-.page-settings .panel {
+.panel-container .panel {
   background-color: #252525;
   box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4);
   color: var(--font-color-light);
@@ -357,18 +364,23 @@ i {
   z-index: 1;
 }
 
-.page-settings.show .panel {
+.panel-container.page-info .panel {
+  right: -310px;
+  width: 300px;
+}
+
+.panel-container.show .panel {
   height: 300px;
   opacity: 1;
 }
 
-.page-settings .panel h5 {
+.panel-container .panel h5 {
   font-size: 13px;
   margin: 0 auto 15px;
   text-align: center;
 }
 
-.page-settings .panel label {
+.panel-container .panel label {
   display: inline-block;
   margin-bottom: 5px;
 }
@@ -550,7 +562,7 @@ i {
     page-break-after: always;
   }
 
-  .page-settings, .page-settings .panel {
+  .panel-container, .panel-container .panel {
     display: none;
   }
 }

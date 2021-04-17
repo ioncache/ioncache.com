@@ -1,7 +1,7 @@
 'use strict';
 
 /*
-  NOTE: normally I'd minify/uglify all resources, but since this is partly a code
+  NOTE: normally I'd minify/uglify/ all resources, but since this is partly a code
         exercise, I've left it all as is for easy reading
 */
 
@@ -40,15 +40,27 @@ document.querySelector('.page-settings').addEventListener('click', (e) => {
   }
 });
 
+/* setup page info toggle */
+document.querySelector('.page-info').addEventListener('click', (e) => {
+  if (
+    e.target.classList.contains('ion-md-help') ||
+    e.target.classList.contains('page-info')
+  ) {
+    document.querySelector('.page-info').classList.toggle('show');
+  }
+});
+
 document.body.addEventListener('click', (e) => {
-  /* remove the show class from page settings whenever clicking anywhere other than
-     the page settings button or inside the page settings container
+  /* remove the show class from page settings/info whenever clicking anywhere other than
+     the page settings/info button or inside the page settings/info container
   */
 
   // FIXME: there must be a better way to do this
   if (
     !e.target.classList.contains('ion-md-settings') &&
     !e.target.classList.contains('page-settings') &&
+    !e.target.classList.contains('ion-md-help') &&
+    !e.target.classList.contains('page-info') &&
     !e.target.classList.contains('panel') &&
     (
       !e.target.parentElement ||
@@ -61,7 +73,10 @@ document.body.addEventListener('click', (e) => {
       !e.target.parentElement.parentElement.classList.contains('panel'))
     )
   ) {
+    // FIXME: I'm not kidding with the above comment, I'm sure there is a better
+    //        way to do this. I'll probably refactor this in the future.
     document.querySelector('.page-settings').classList.remove('show');
+    document.querySelector('.page-info').classList.remove('show');
   }
 });
 
@@ -75,26 +90,30 @@ document.body.addEventListener('click', (e) => {
   to be fair the chartjs one is a bit nicer, but it would all be doable in css only if desired
 */
 
-let ctx = document.getElementById("skillsChart").getContext('2d');
+const ctx = document.getElementById("skillsChart").getContext('2d');
 
-let myChart = new Chart(ctx, {
+const chartLabels = [
+  'AngularJS',
+  'Angular',
+  'CSS',
+  'HTML',
+  'Javascript',
+  'jQuery',
+  'Node',
+  'Perl',
+  'Polymer',
+  'React',
+  'SQL',
+]
+
+const chartData = Array.from({length: 11}, () => Math.floor(Math.random() * 10) + 1)
+
+const myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: [
-          'AngularJS',
-          'Angular',
-          'CSS',
-          'HTML',
-          'Javascript',
-          'jQuery',
-          'Node',
-          'Perl',
-          'Polymer',
-          'React',
-          'SQL',
-        ],
+        labels: chartLabels,
         datasets: [{
-            data: [7, 3, 8, 8, 8, 8, 7, 6, 8, 1, 5],
+            data: chartData,
             backgroundColor: [
               'rgba(141,211,199, 0.6)',
               'rgba(116, 241, 215, 0.6)',
@@ -151,17 +170,31 @@ let myChart = new Chart(ctx, {
           }
         }]
       },
+      title: {
+        display: true,
+        text: [
+          'these values are just randomly generated as I think skills charts',
+          'like these are really kind of silly for a resume',
+        ],
+      },
       tooltips: {
         callbacks:{
           label: function(tooltipItem, data) {
-            var dataValue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || 0;
+            const dataValue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || 0;
 
-            let tooltipString = `   ${dataValue <=3 ? 'Weak' : dataValue >= 4 && dataValue <= 7 ? 'Intermediate' : 'Strong'}`;
-
-            if (tooltipItem.yLabel === 'React') {
-              tooltipString += '; just started learning React';
+            if (dataValue === 10) {
+              return '   Yeah right, no one is really a 10.'
             }
-            return tooltipString;
+
+            if (dataValue <= 3) {
+              return '   Weak'
+            }
+
+            if (dataValue >= 4 && dataValue <= 7) {
+              return '   Intermediate'
+            }
+
+            return '   Strong'
           }
         }
       }

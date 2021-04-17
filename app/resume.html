@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Résumé of Mark Jubenville</title>
+    <title>Resume? Résumé? Abstract of Mark Jubenville</title>
 
     <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="author" content="Mark Jubenville <ioncache@gmail.com>">
-    <meta name="description" content="Résumé of Mark Jubenville">
-    <meta name="keywords" content="résumé, resume, CV, curriculum vitae, work history, synopsis">
+    <meta name="description" content="Resume? Résumé? Abstract of Mark Jubenville">
+    <meta name="keywords" content="résumé, resume, abstract, CV, curriculum vitae, work history, synopsis">
     <meta name="viewport" content="width = device-width, user-scalable = yes, initial-scale = 1.0">
 
     <link rel="stylesheet" href="styles/reset.css">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="lib/ctips/ctips.css">
     <link rel="stylesheet" href="styles/resume.css">
 
-    <!-- eww tracking eww -->
+    <!-- eww tracking eww, please use ublock or adblock, don't let this tracking stuff work!!! -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118339303-1"></script>
     <script>
@@ -30,7 +30,7 @@
 
     <!--
       TODO: move the page settings dialog out from inside of the page settings button div
-            so that when hovering over anything inide the dialog the page settings tooltip
+            so that when hovering over anything inside the dialog the page settings tooltip
             does not show
     -->
   </head>
@@ -52,13 +52,13 @@
         <div
           aria-label="Page Settings"
           role="button"
-          class="page-settings"
+          class="panel-container page-settings"
           data-ctip="Page Settings"
           data-ctip-position="right"
         >
           <i class="icon ion-md-settings"></i>
           <div class="panel">
-            <h5>Here be settings.</h5>
+            <h4>Here be settings.</h4>
 
             <label for="themePicker">Change Theme</label>
             <select id="themePicker" class="theme-picker">
@@ -67,6 +67,27 @@
               <option value="solarized">Solarized</option>
               <option value="zenburn">Zenburn</option>
             </select>
+
+            <p>Yes, this is a fairly large box considering the few amount of settings. One could even go so far as to say it could be more appropriately called "Page Setting".</p>
+          </div>
+        </div>
+
+        <div
+          aria-label="Page Info"
+          role="button"
+          class="panel-container page-info"
+          data-ctip="Page Info"
+          data-ctip-position="left"
+        >
+          <i class="icon ion-md-help"></i>
+          <div class="panel">
+            <h5>Page Info</h5>
+
+            <p>The decision to use just regular HTML, vanilla JS (mostly), and vanilla CSS to create this page was made as I didn't want to pick a specific framework.</p>
+
+            <p>I think sometimes developers get too attached to their framework of choice, and can get tunnel vision when trying to decide what to use for a new project.</p>
+
+            <p>Generally I'm framework agnostic as they all have their pros and cons.</p>
           </div>
         </div>
 
@@ -152,12 +173,46 @@
         <div class="section-content">
           <div class="experience-details">
             <h3>
-              Staff Web Developer <br>
+              Tech Lead <br>
+              Utility Services <br>
               ecobee, Toronto, Canada <br>
-              January 2019 - present
+              February 2021 - present
             </h3>
-            
-            <p>This section should get updated...</p>
+
+            <p>Still new at this position and I'm going to reserve the right to fill in this section at a later date.</p>
+          </div>
+
+          <div class="experience-details">
+            <h3>
+              Staff Web Developer <br>
+              SmartBuildings <br>
+              ecobee, Toronto, Canada <br>
+              January 2019 - February 2021
+            </h3>
+
+            <p>Full stack development on BTB application giving small to mid sized businesses the ability to manage a fleet of thermostats across many buildings and geographic locations. Work covered frontend UI and logic, along with maintaining and expanding backend internal APIs.</p>
+
+            <p>Design and implementation of new public facing API for the SmartBuildings application, allowing external clients the ability to manage their SmartBuildings account programmatically.</p>
+
+            <h5>Relevant Links</h5>
+
+            <ul>
+              <li>
+                SmartBuildings: <a href="https://sb.ecobee.com/"><i class="icon ion-md-globe"></i>&nbsp;sb.ecobee.com</a>
+              </li>
+
+              <li>
+                SmartBuildings Public API Documentation: <a href="https://docs.sb.ecobee.com/"><i class="icon ion-md-globe"></i>&nbsp;docs.sb.ecobee.com</a>
+              </li>
+
+              <li>
+                SmartBuildings Public API: <a href="https://api.sb.ecobee.com/"><i class="icon ion-md-globe"></i>&nbsp;api.sb.ecobee.com</a>
+              </li>
+
+              <li>
+                SmartBuildings Public Api Specification: <a href="https://api.sb.ecobee.com/docs/openapi.json"><i class="icon ion-md-globe"></i>&nbsp;api.sb.ecobee.com/docs/openapi.json</a>
+              </li>
+            </ul>
           </div>
 
           <div class="experience-details">
@@ -174,15 +229,6 @@
             <p>
               Main public facing product work has been on OANDA's registration system and new web-based trading platform.
             </p>
-            <ul>
-              <li>
-                Registration: <a href="https://register.oanda.com"><i class="icon ion-md-globe"></i>&nbsp;register.oanda.com</a>
-              </li>
-
-              <li>
-                Trading Platform: <a href="https://trade.oanda.com"><i class="icon ion-md-globe"></i>&nbsp;trade.oanda.com</a>
-              </li>
-            </ul>
 
             <p>
               UI design and implementation for new software, along with unifying the UI across a number of products.
@@ -195,6 +241,18 @@
             <p>
               Backend API and application development to support new and legacy applications.
             </p>
+
+            <h5>Relevant Links</h5>
+
+            <ul>
+              <li>
+                Registration: <a href="https://register.oanda.com"><i class="icon ion-md-globe"></i>&nbsp;register.oanda.com</a>
+              </li>
+
+              <li>
+                Trading Platform: <a href="https://trade.oanda.com"><i class="icon ion-md-globe"></i>&nbsp;trade.oanda.com</a>
+              </li>
+            </ul>
           </div>
 
           <div class="experience-details">
@@ -267,6 +325,12 @@
       <section class="skills-print">
         <h2>Skills</h2>
 
+        <sup style="display: block; text-align: right;">
+          <em>
+            these values are just randomly generated as I think skills charts <br> like these are really kind of silly for a resume
+          </em>
+        </sup>
+
         <div class="section-content">
           <table>
             <tbody>
@@ -275,7 +339,7 @@
                   AngularJS
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(141,211,199, 0.6); border: 1px solid rgb(141,211,199); width: 70%;">&nbsp;</div>
+                  <div style="background-color: rgba(141,211,199, 0.6); border: 1px solid rgb(141,211,199); width: 10%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -284,7 +348,7 @@
                   Angular
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(116, 241, 215, 0.6); border: 1px solid rgba(116, 241, 215, 1); width: 30%;">&nbsp;</div>
+                  <div style="background-color: rgba(116, 241, 215, 0.6); border: 1px solid rgba(116, 241, 215, 1); width: 20%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -293,7 +357,7 @@
                   CSS
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(255,255,179, 0.6); border: 1px solid rgb(255,255,179); width: 80%;">&nbsp;</div>
+                  <div style="background-color: rgba(255,255,179, 0.6); border: 1px solid rgb(255,255,179); width: 30%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -302,7 +366,7 @@
                   HTML
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(190,186,218, 0.6); border: 1px solid rgb(190,186,218); width: 80%;">&nbsp;</div>
+                  <div style="background-color: rgba(190,186,218, 0.6); border: 1px solid rgb(190,186,218); width: 40%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -311,7 +375,7 @@
                   Javascript
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(251,128,114, 0.6); border: 1px solid rgb(251,128,114); width: 80%;">&nbsp;</div>
+                  <div style="background-color: rgba(251,128,114, 0.6); border: 1px solid rgb(251,128,114); width: 50%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -320,7 +384,7 @@
                   jQuery
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(128,177,211, 0.6); border: 1px solid rgb(128,177,211); width: 80%;">&nbsp;</div>
+                  <div style="background-color: rgba(128,177,211, 0.6); border: 1px solid rgb(128,177,211); width: 60%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -338,7 +402,7 @@
                   Perl
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(179,222,105, 0.6); border: 1px solid rgb(179,222,105); width: 60%;">&nbsp;</div>
+                  <div style="background-color: rgba(179,222,105, 0.6); border: 1px solid rgb(179,222,105); width: 80%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -347,7 +411,7 @@
                   Polymer
                 </td>
                 <td colspan="3">
-                  <div style="background-color:rgba(252,205,229, 0.6); border: 1px solid rgb(252,205,229); width: 80%;">&nbsp;</div>
+                  <div style="background-color:rgba(252,205,229, 0.6); border: 1px solid rgb(252,205,229); width: 90%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -356,7 +420,7 @@
                   React
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(204,235,197, 0.6); border: 1px solid rgb(204,235,197); width: 10%;">&nbsp;</div>
+                  <div style="background-color: rgba(204,235,197, 0.6); border: 1px solid rgb(204,235,197); width: 100%;">&nbsp;</div>
                 </td>
               </tr>
 
@@ -365,7 +429,7 @@
                   SQL
                 </td>
                 <td colspan="3">
-                  <div style="background-color: rgba(188,128,189, 0.6); border: 1px solid rgb(188,128,189); width: 50%;">&nbsp;</div>
+                  <div style="background-color: rgba(188,128,189, 0.6); border: 1px solid rgb(188,128,189); width: 100%;">&nbsp;</div>
                 </td>
               </tr>
             </tbody>
@@ -461,7 +525,7 @@
             </div>
 
             <h4>
-              Chess <span>member of the Chess Federation of Canada</span>
+              Chess <span>Took up chess again recently after many years away from it. Hard stuck in the mid 1700 range. I may have to spend some time on this.</span>
             </h4>
         </div>
       </section>

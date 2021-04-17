@@ -1,10 +1,10 @@
 {
   "name": "ioncache.com",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Personal website of Mark Jubenville, aka, ioncache.",
   "dependencies": {
-    "sitemap-generator": "^8.3.1",
-    "snyk": "^1.316.1"
+    "sitemap-generator": "^8.5.1",
+    "snyk": "^1.550.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -14,9 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com//ioncache/ioncache.com"
+    "url": "https://github.com/ioncache/ioncache.com"
   },
-  "author": "Mark Jubenville <ioncache@ioncache.com>",
+  "author": "Mark Jubenville <ioncache@gmail.com>",
   "license": "MIT",
   "snyk": true
 }
