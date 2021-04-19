@@ -90,6 +90,7 @@ const ctx = document.getElementById('skillsChart').getContext('2d')
 
 const skillsList = [
   'AWS',
+  'Accessibility',
   'Angular',
   'AngularJS',
   'CSS',
@@ -102,12 +103,17 @@ const skillsList = [
   'HTML',
   'Javascript',
   'Kubernetes',
+  'NoSQL',
   'Node',
   'Perl',
   'Polymer',
+  'Python',
   'REST APIs',
   'React',
+  'Responsive Design',
   'SQL',
+  'Security',
+  'Version Control',
   'jQuery',
 ]
 
