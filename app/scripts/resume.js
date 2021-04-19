@@ -88,24 +88,95 @@ document.body.addEventListener('click', (e) => {
 
 const ctx = document.getElementById('skillsChart').getContext('2d')
 
-const chartLabels = [
-  'AngularJS',
+const skillsList = [
+  'AWS',
   'Angular',
+  'AngularJS',
   'CSS',
+  'Continuous Deployment',
+  'Continuous Integration',
+  'Data Driven Design',
+  'Docker',
+  'GCP',
+  'Go',
   'HTML',
   'Javascript',
-  'jQuery',
+  'Kubernetes',
   'Node',
   'Perl',
   'Polymer',
+  'REST APIs',
   'React',
   'SQL',
+  'jQuery',
 ]
 
+const chartSkillCount = 11
+
+// randomly select skills from the skills list
+const chartLabels = [...skillsList]
+  .sort(() => 0.5 - Math.random())
+  .slice(0, chartSkillCount)
+  .sort((a, b) => a.localeCompare(b))
+
+// generate random values
 const chartData = Array.from(
-  { length: 11 },
+  { length: chartLabels.length },
   () => Math.floor(Math.random() * 10) + 1,
 )
+
+const skillColours = [
+  {
+    background: 'rgba(141,211,199, 0.6)',
+    border: 'rgb(141,211,199)',
+  },
+  {
+    background: 'rgba(116, 241, 215, 0.6)',
+    border: 'rgba(116, 241, 215, 1)',
+  },
+  {
+    background: 'rgba(255,255,179, 0.6)',
+    border: 'rgb(255,255,179)',
+  },
+  {
+    background: 'rgba(190,186,218, 0.6)',
+    border: 'rgb(190,186,218)',
+  },
+  {
+    background: 'rgba(251,128,114, 0.6)',
+    border: 'rgb(251,128,114)',
+  },
+  {
+    background: 'rgba(128,177,211, 0.6)',
+    border: 'rgb(128,177,211)',
+  },
+  {
+    background: 'rgba(253,180,98, 0.6)',
+    border: 'rgb(253,180,98)',
+  },
+  {
+    background: 'rgba(179,222,105, 0.6)',
+    border: 'rgb(179,222,105)',
+  },
+  {
+    background: 'rgba(252,205,229, 0.6)',
+    border: 'rgb(252,205,229)',
+  },
+  {
+    background: 'rgba(204,235,197, 0.6)',
+    border: 'rgb(204,235,197)',
+  },
+  {
+    background: 'rgba(188,128,189, 0.6)',
+    border: 'rgb(188,128,189)',
+  },
+  {
+    background: 'rgba(255,237,111, 0.6)',
+    border: 'rgb(255,237,111)',
+  },
+]
+
+const randomizedColours = [...skillColours].sort(() => 0.5 - Math.random())
 
 const myChart = new Chart(ctx, {
   type: 'horizontalBar',
@@ -114,34 +185,8 @@ const myChart = new Chart(ctx, {
     datasets: [
       {
         data: chartData,
-        backgroundColor: [
-          'rgba(141,211,199, 0.6)',
-          'rgba(116, 241, 215, 0.6)',
-          'rgba(255,255,179, 0.6)',
-          'rgba(190,186,218, 0.6)',
-          'rgba(251,128,114, 0.6)',
-          'rgba(128,177,211, 0.6)',
-          'rgba(253,180,98, 0.6)',
-          'rgba(179,222,105, 0.6)',
-          'rgba(252,205,229, 0.6)',
-          'rgba(204,235,197, 0.6)',
-          'rgba(188,128,189, 0.6)',
-          'rgba(255,237,111, 0.6)',
-        ],
-        borderColor: [
-          'rgb(141,211,199)',
-          'rgba(116, 241, 215, 1)',
-          'rgb(255,255,179)',
-          'rgb(190,186,218)',
-          'rgb(251,128,114)',
-          'rgb(128,177,211)',
-          'rgb(253,180,98)',
-          'rgb(179,222,105)',
-          'rgb(252,205,229)',
-          'rgb(204,235,197)',
-          'rgb(188,128,189)',
-          'rgb(255,237,111)',
-        ],
+        backgroundColor: randomizedColours.map(colour => colour.background),
+        borderColor: randomizedColours.map(colour => colour.border),
         borderWidth: 1,
       },
     ],
@@ -176,8 +221,9 @@ const myChart = new Chart(ctx, {
     title: {
       display: true,
       text: [
-        'these values are just randomly generated as I think skills charts',
-        'like these are really kind of silly for a resume',
+        'this list, including the values, is just randomly generated as I think',
+        'skills charts like these are really kind of silly for a resume',
+        'probably this section could be better filled with something else',
       ],
     },
     tooltips: {
@@ -204,3 +250,41 @@ const myChart = new Chart(ctx, {
     },
   },
 })
+
+/**
+ * populate the print version of the skills chart
+
+ * NOTE: although this script is loaded after all the html
+ *       it's probably fine to populate the print version at
+ *       this point since it's unlikely a user would print
+ *       the page before the javascript had finished loading
+ *
+ * FIXME: this of course doesn't work since the JS won't run
+ *        in the print dialogs
+ *        need to figure out a different way of dynamically
+ *        generating the chart for print
+ */
+
+// const printSkillChart = document.getElementById('printSkillChart')
+
+// chartLabels.forEach((skill, i) => {
+//   const row = document.createElement('tr')
+
+//   const skillCell = document.createElement('td')
+//   skillCell.innerHTML = skill
+
+//   const barCell = document.createElement('td')
+//   barCell.colSpan = 3
+
+//   const bar = document.createElement('div')
+//   bar.style.backgroundColor = randomizedColours[i].background
+//   bar.style.border = `1 px solid ${randomizedColours[i].border}`
+//   bar.style.width = `${chartData[i] * 10}%`
+//   bar.innerHTML = '&nbsp;'
+
+//   barCell.appendChild(bar)
+//   row.appendChild(skillCell)
+//   row.appendChild(barCell)
+
+//   printSkillChart.appendChild(row)
+// })

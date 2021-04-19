@@ -128,7 +128,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Russo One', 'Helvatica', 'Arial', sans-serif;
+  font-family: 'Russo One', 'Helvetica', 'Arial', sans-serif;
   font-weight: 100;
   margin: 0;
 }
@@ -153,6 +153,140 @@ h4 span {
 i {
   position: relative;
   top: 1px;
+}
+
+/***************************/
+/* Section specific styles */
+/***************************/
+
+/* contact / header section */
+
+.contact h1 {
+  display: inline-block;
+  font-family: 'Alex Brush', cursive;
+  font-size: 58px;
+  height: 55px;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.contact .reference-text {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact .section-content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 55px);
+}
+
+.contact li {
+  margin-bottom: 20px;
+}
+
+.contact ul {
+  display: block;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 200px;
+}
+
+.theme-picker {
+  z-index: 2;
+}
+
+.panel-container {
+  cursor: pointer;
+  left: 15px;
+  padding: 4px;
+  position: absolute;
+  transition: background-color 200ms linear, color 200ms linear;
+}
+
+.page-settings {
+  top: 15px;
+}
+
+.page-info {
+  top: 45px;
+}
+
+.panel-container:hover {
+  background-color: var(--highlight-color);
+  color: var(--font-color-dark);
+}
+
+.panel-container .panel {
+  background-color: #252525;
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4);
+  color: var(--font-color-light);
+  font-size: 12px;
+  height: 0;
+  opacity: 0;
+  overflow-y: hidden;
+  padding: 15px;
+  position: absolute;
+  right: -210px;
+  top: 2px;
+  transform-origin: top left;
+  transition: height 300ms ease-out;
+  width: 200px;
+  z-index: 1;
+}
+
+.panel-container.page-info .panel {
+  right: -310px;
+  width: 300px;
+}
+
+.panel-container.show .panel {
+  height: 300px;
+  opacity: 1;
+}
+
+.panel-container .panel h5 {
+  font-size: 13px;
+  margin: 0 auto 15px;
+  text-align: center;
+}
+
+.panel-container .panel label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* experience section */
+.experience .experience-details {
+  margin-top: 15px;
+}
+
+.experience h3 {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.experience p {
+  margin-left: 15px;
+}
+
+/* interests section */
+
+.interests a {
+  color: var(--font-color-link-dark);
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.interests li {
+  line-height: 1.2em;
+}
+
+/* print version of skill section */
+.skills-print {
+  display: none;
 }
 
 /***************/
@@ -287,140 +421,6 @@ i {
   display: none;
 }
 
-/***************************/
-/* Section specific styles */
-/***************************/
-
-/* contact / header section */
-
-.contact h1 {
-  display: inline-block;
-  font-family: 'Alex Brush', cursive;
-  font-size: 58px;
-  height: 55px;
-  margin-bottom: 40px;
-  text-align: center;
-  width: 100%;
-}
-
-.contact .reference-text {
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.contact .section-content {
-  display: flex;
-  flex-direction: column;
-  height: calc(100% - 55px);
-}
-
-.contact li {
-  margin-bottom: 20px;
-}
-
-.contact ul {
-  display: block;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  width: 200px;
-}
-
-.theme-picker {
-  z-index: 2;
-}
-
-.panel-container {
-  cursor: pointer;
-  left: 15px;
-  padding: 4px;
-  position: absolute;
-  transition: background-color 200ms linear, color 200ms linear;
-}
-
-.page-settings {
-  top: 15px;
-}
-
-.page-info {
-  top: 45px;
-}
-
-.panel-container:hover {
-  background-color: var(--highlight-color);
-  color: var(--font-color-dark);
-}
-
-.panel-container .panel {
-  background-color: #252525;
-  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4);
-  color: var(--font-color-light);
-  font-size: 12px;
-  height: 0;
-  opacity: 0;
-  overflow-y: hidden;
-  padding: 15px;
-  position: absolute;
-  right: -210px;
-  top: 2px;
-  transform-origin: top left;
-  transition: height 300ms ease-out;
-  width: 200px;
-  z-index: 1;
-}
-
-.panel-container.page-info .panel {
-  right: -310px;
-  width: 300px;
-}
-
-.panel-container.show .panel {
-  height: 300px;
-  opacity: 1;
-}
-
-.panel-container .panel h5 {
-  font-size: 13px;
-  margin: 0 auto 15px;
-  text-align: center;
-}
-
-.panel-container .panel label {
-  display: inline-block;
-  margin-bottom: 5px;
-}
-
-/* experience section */
-.experience .experience-details {
-  margin-top: 15px;
-}
-
-.experience h3 {
-  font-size: 14px;
-  line-height: 22px;
-}
-
-.experience p {
-  margin-left: 15px;
-}
-
-/* interests section */
-
-.interests a {
-  color: var(--font-color-link-dark);
-  display: inline-block;
-  margin: 10px 0;
-}
-
-.interests li {
-  line-height: 1.2em;
-}
-
-/* print version of skill ssection */
-.skills-print {
-  display: none;
-}
-
 /* change view on smaller width displays or for print */
 
 @media print, (max-width: 1200px) {
@@ -490,6 +490,17 @@ i {
     font-size: 12px;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-dark-green);
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
   .contact h1 {
     margin-bottom: 20px;
   }
@@ -518,6 +529,10 @@ i {
     color: var(--color-black);
   }
 
+  .skills-print {
+    page-break-after: always;
+  }
+
   .main-area .skills {
     display: none;
   }
@@ -541,7 +556,7 @@ i {
 
   .main-area .skills-print tr td:first-child {
     font-weight: bold;
-    width: 100px;
+    max-width: 100px;
   }
 
   .main-area .skills-print tfoot {
@@ -554,21 +569,6 @@ i {
 
   .main-area .skills-print tfoot tr td:last-child {
     text-align: right;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--color-dark-green);
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-
-  .skills-print {
-    page-break-after: always;
   }
 
   .panel-container,
