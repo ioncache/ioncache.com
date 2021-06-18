@@ -4,7 +4,7 @@
   "description": "Personal website of Mark Jubenville, aka, ioncache.",
   "devDependencies": {
     "husky": "^6.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.1",
     "pretty-quick": "^3.1.0",
     "sitemap-generator": "^8.5.1",
     "snyk": "^1.573.0",
