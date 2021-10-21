@@ -6,8 +6,7 @@
     "husky": "^7.0.4",
     "prettier": "^2.4.1",
     "pretty-quick": "^3.1.1",
-    "sitemap-generator": "^8.5.1",
-    "snyk": "^1.573.0",
+    "sitemap-generator": "^7.5.2",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0"
@@ -16,8 +15,6 @@
     "format": "npx prettier -w ./app",
     "lint": "npx stylelint ./app --config .stylelintrc.js",
     "lint:fix": "npx stylelint ./app --fix --config .stylelintrc.js",
-    "prepublish": "npm run snyk-protect",
-    "snyk-protect": "snyk protect",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,7 +23,6 @@
   },
   "author": "Mark Jubenville <ioncache@gmail.com>",
   "license": "MIT",
-  "snyk": true,
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
