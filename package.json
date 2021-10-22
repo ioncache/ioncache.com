@@ -6,7 +6,7 @@
     "husky": "^7.0.4",
     "prettier": "^2.4.1",
     "pretty-quick": "^3.1.1",
-    "sitemap-generator": "^7.5.2",
+    "sitemap-generator": "^8.5.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0"
