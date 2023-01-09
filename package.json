@@ -9,7 +9,7 @@
     "sitemap-generator": "^7.5.2",
     "stylelint": ">=14.8.2",
     "stylelint-config-standard": ">=25.0.0",
-    "stylelint-order": ">=5.0.0",
+    "stylelint-order": ">=6.0.1",
     "url-parse": ">=1.5.10"
   },
   "scripts": {
