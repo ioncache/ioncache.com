@@ -6,18 +6,18 @@
   @returns {void}
 */
 function setTheme(newTheme) {
-  const currentTheme = getTheme()
+  const currentTheme = getTheme();
 
   if (currentTheme) {
-    document.body.classList.remove(`theme-${currentTheme}`)
+    document.body.classList.remove(`theme-${currentTheme}`);
   }
 
   if (newTheme) {
-    document.body.classList.add(`theme-${newTheme}`)
+    document.body.classList.add(`theme-${newTheme}`);
   }
 
   if (localStorage) {
-    localStorage.setItem('ioncache-theme', newTheme)
+    localStorage.setItem('ioncache-theme', newTheme);
   }
 }
 
@@ -28,9 +28,9 @@ function setTheme(newTheme) {
 */
 function getTheme() {
   if (localStorage) {
-    return localStorage.getItem('ioncache-theme') || ''
+    return localStorage.getItem('ioncache-theme') || '';
   } else {
-    return ''
+    return '';
   }
 }
 
@@ -40,14 +40,14 @@ function getTheme() {
   @returns {void}
 */
 function addThemePickerListener() {
-  const themePicker = document.querySelector('.theme-picker')
+  const themePicker = document.querySelector('.theme-picker');
 
   if (themePicker) {
-    themePicker.value = getTheme()
+    themePicker.value = getTheme();
 
     themePicker.addEventListener('change', (e) => {
-      setTheme(e.target.value)
-    })
+      setTheme(e.target.value);
+    });
   }
 }
 
@@ -56,12 +56,12 @@ function addThemePickerListener() {
   so that the elements exist by the time the listener is added
 */
 if (window.onload) {
-  let currentOnloadEvent = window.onload
+  let currentOnloadEvent = window.onload;
   let newOnLoadEvent = function (e) {
-    currentOnloadEvent(e)
-    addThemePickerListener()
-  }
-  window.onload = newOnLoadEvent
+    currentOnloadEvent(e);
+    addThemePickerListener();
+  };
+  window.onload = newOnLoadEvent;
 } else {
-  window.onload = addThemePickerListener
+  window.onload = addThemePickerListener;
 }

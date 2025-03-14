@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
   NOTE: normally I'd minify/uglify/ all resources, but since this is partly a code
@@ -13,22 +13,22 @@
 */
 
 document.querySelector('.main-area').addEventListener('click', (e) => {
-  let parentSection
+  let parentSection;
 
   if (
     e.target.classList.contains('ion-md-contract') ||
     e.target.classList.contains('ion-md-expand')
   ) {
-    parentSection = e.target.parentNode.parentNode
+    parentSection = e.target.parentNode.parentNode;
   } else if (e.target.classList.contains('toggle-fill-grid')) {
-    parentSection = e.target.parentNode
+    parentSection = e.target.parentNode;
   }
 
   if (parentSection) {
-    parentSection.classList.toggle('fill-grid')
-    document.querySelector('.contact').classList.toggle('fill-grid')
+    parentSection.classList.toggle('fill-grid');
+    document.querySelector('.contact').classList.toggle('fill-grid');
   }
-})
+});
 
 /* setup page settings toggle */
 document.querySelector('.page-settings').addEventListener('click', (e) => {
@@ -36,9 +36,9 @@ document.querySelector('.page-settings').addEventListener('click', (e) => {
     e.target.classList.contains('ion-md-settings') ||
     e.target.classList.contains('page-settings')
   ) {
-    document.querySelector('.page-settings').classList.toggle('show')
+    document.querySelector('.page-settings').classList.toggle('show');
   }
-})
+});
 
 /* setup page info toggle */
 document.querySelector('.page-info').addEventListener('click', (e) => {
@@ -46,9 +46,9 @@ document.querySelector('.page-info').addEventListener('click', (e) => {
     e.target.classList.contains('ion-md-help') ||
     e.target.classList.contains('page-info')
   ) {
-    document.querySelector('.page-info').classList.toggle('show')
+    document.querySelector('.page-info').classList.toggle('show');
   }
-})
+});
 
 document.body.addEventListener('click', (e) => {
   /* remove the show class from page settings/info whenever clicking anywhere other than
@@ -71,10 +71,10 @@ document.body.addEventListener('click', (e) => {
   ) {
     // FIXME: I'm not kidding with the above comment, I'm sure there is a better
     //        way to do this. I'll probably refactor this in the future.
-    document.querySelector('.page-settings').classList.remove('show')
-    document.querySelector('.page-info').classList.remove('show')
+    document.querySelector('.page-settings').classList.remove('show');
+    document.querySelector('.page-info').classList.remove('show');
   }
-})
+});
 
 /*
   setup the skills chart
@@ -86,26 +86,35 @@ document.body.addEventListener('click', (e) => {
   to be fair the chartjs one is a bit nicer, but it would all be doable in css only if desired
 */
 
-const ctx = document.getElementById('skillsChart').getContext('2d')
+const ctx = document.getElementById('skillsChart').getContext('2d');
 
 const skillsList = [
   'Accessibility',
   'Angular',
   'AngularJS',
   'AWS',
+  'Azure',
   'Continuous Deployment',
   'Continuous Integration',
   'CSS',
   'Data Driven Design',
   'Docker',
   'GCP',
+  'gRPC',
   'Go',
   'HTML',
+  'i18n',
   'Javascript',
   'jQuery',
   'Kubernetes',
+  'l10n',
+  'LLMs',
+  'MongoDB',
+  'Next.js',
   'Node',
   'NoSQL',
+  'o11y',
+  'Observability',
   'Perl',
   'Polymer',
   'Python',
@@ -115,22 +124,23 @@ const skillsList = [
   'Security',
   'SQL',
   'Terraform',
+  'TypeScript',
   'Version Control',
-]
+];
 
-const chartSkillCount = 11
+const chartSkillCount = 11;
 
 // randomly select skills from the skills list
 const chartLabels = [...skillsList]
   .sort(() => 0.5 - Math.random())
   .slice(0, chartSkillCount)
-  .sort((a, b) => a.localeCompare(b))
+  .sort((a, b) => a.localeCompare(b));
 
 // generate random values
 const chartData = Array.from(
   { length: chartLabels.length },
   () => Math.floor(Math.random() * 10) + 1,
-)
+);
 
 const skillColours = [
   {
@@ -181,9 +191,9 @@ const skillColours = [
     background: 'rgba(255,237,111, 0.6)',
     border: 'rgb(255,237,111)',
   },
-]
+];
 
-const randomizedColours = [...skillColours].sort(() => 0.5 - Math.random())
+const randomizedColours = [...skillColours].sort(() => 0.5 - Math.random());
 
 const myChart = new Chart(ctx, {
   type: 'horizontalBar',
@@ -192,8 +202,8 @@ const myChart = new Chart(ctx, {
     datasets: [
       {
         data: chartData,
-        backgroundColor: randomizedColours.map(colour => colour.background),
-        borderColor: randomizedColours.map(colour => colour.border),
+        backgroundColor: randomizedColours.map((colour) => colour.background),
+        borderColor: randomizedColours.map((colour) => colour.border),
         borderWidth: 1,
       },
     ],
@@ -211,11 +221,11 @@ const myChart = new Chart(ctx, {
             callback: function (label) {
               switch (label) {
                 case 0:
-                  return 'Weak'
+                  return 'Weak';
                 case 5:
-                  return 'Intermediate'
+                  return 'Intermediate';
                 case 10:
-                  return 'Strong'
+                  return 'Strong';
               }
             },
             max: 10,
@@ -228,35 +238,39 @@ const myChart = new Chart(ctx, {
     title: {
       display: true,
       text: [
-        'this list, including the values, is just randomly generated as I think',
-        'skills charts like these are really kind of silly for a resume',
-        'probably this section could be better filled with something else',
+        'This list, including the values, are randomly generated and',
+        'do not necessarily have relevance to my actual skill set.',
+        'I think skills charts like these are failry silly on resumes.',
+        'Refreshing the page will generate a new list.',
+        'I should really just remove this section, but my layout works',
+        'better with something filling this space.'
       ],
     },
     tooltips: {
       callbacks: {
         label: function (tooltipItem, data) {
           const dataValue =
-            data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || 0
+            data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] ||
+            0;
 
           if (dataValue === 10) {
-            return '   Yeah right, no one is really a 10.'
+            return '   Yeah right, no one is really a 10.';
           }
 
           if (dataValue <= 3) {
-            return '   Weak'
+            return '   Weak';
           }
 
           if (dataValue >= 4 && dataValue <= 7) {
-            return '   Intermediate'
+            return '   Intermediate';
           }
 
-          return '   Strong'
+          return '   Strong';
         },
       },
     },
   },
-})
+});
 
 /**
  * populate the print version of the skills chart

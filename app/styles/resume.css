@@ -114,7 +114,9 @@ a {
   color: var(--font-color-link-light);
   padding: 4px;
   text-decoration: none;
-  transition: background-color 200ms linear, color 200ms linear;
+  transition:
+    background-color 200ms linear,
+    color 200ms linear;
 }
 
 a:hover {
@@ -203,7 +205,9 @@ i {
   left: 15px;
   padding: 4px;
   position: absolute;
-  transition: background-color 200ms linear, color 200ms linear;
+  transition:
+    background-color 200ms linear,
+    color 200ms linear;
 }
 
 .page-settings {
@@ -401,7 +405,9 @@ i {
   padding: 4px;
   position: absolute;
   top: 15px;
-  transition: background-color 200ms linear, color 200ms linear;
+  transition:
+    background-color 200ms linear,
+    color 200ms linear;
 }
 
 .toggle-fill-grid:hover {
