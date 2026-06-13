@@ -9,5 +9,5 @@
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false,
-  "ignorePatterns": ["package-lock.json", "dist", "node_modules"]
+  "ignorePatterns": ["app/lib/**", "dist", "node_modules", "package-lock.json"]
 }
