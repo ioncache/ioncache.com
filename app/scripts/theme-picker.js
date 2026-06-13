@@ -51,4 +51,4 @@ function addThemePickerListener() {
   }
 }
 
-window.addEventListener('load', addThemePickerListener);
+window.addEventListener('DOMContentLoaded', addThemePickerListener);

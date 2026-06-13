@@ -30,23 +30,26 @@ document.querySelector('.main-area').addEventListener('click', (e) => {
   }
 });
 
+const pageSettings = document.querySelector('.page-settings');
+const pageInfo = document.querySelector('.page-info');
+
 /* setup page settings toggle */
-document.querySelector('.page-settings').addEventListener('click', (e) => {
+pageSettings.addEventListener('click', (e) => {
   if (
     e.target.classList.contains('ion-md-settings') ||
     e.target.classList.contains('page-settings')
   ) {
-    document.querySelector('.page-settings').classList.toggle('show');
+    pageSettings.classList.toggle('show');
   }
 });
 
 /* setup page info toggle */
-document.querySelector('.page-info').addEventListener('click', (e) => {
+pageInfo.addEventListener('click', (e) => {
   if (
     e.target.classList.contains('ion-md-help') ||
     e.target.classList.contains('page-info')
   ) {
-    document.querySelector('.page-info').classList.toggle('show');
+    pageInfo.classList.toggle('show');
   }
 });
 
@@ -56,7 +59,7 @@ document.body.addEventListener('click', (e) => {
   */
 
   if (!e.target.closest('.panel-container')) {
-    document.querySelector('.page-settings').classList.remove('show');
-    document.querySelector('.page-info').classList.remove('show');
+    pageSettings.classList.remove('show');
+    pageInfo.classList.remove('show');
   }
 });
