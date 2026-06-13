@@ -1,6 +1,6 @@
 {
   "name": "ioncache.com",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Personal website of Mark Jubenville, aka, ioncache.",
   "license": "MIT",
   "author": "Mark Jubenville <ioncache@gmail.com>",
@@ -23,10 +23,8 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.0.7",
     "markdownlint-cli2": "^0.22.1",
-    "oxfmt": "^0.53.0",
-    "oxlint": "^1.68.0",
-    "sitemap-generator": "^8.5.1",
-    "url-parse": ">=1.5.10"
+    "oxfmt": "^0.54.0",
+    "oxlint": "^1.69.0"
   },
   "engines": {
     "node": ">=20"
