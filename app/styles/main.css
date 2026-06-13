@@ -23,6 +23,11 @@ body {
   letter-spacing: -3px;
 }
 
+.dot-content a {
+  display: flex;
+  text-decoration: none;
+}
+
 .inline {
   display: inline-block;
 }
