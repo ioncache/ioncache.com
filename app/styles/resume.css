@@ -4,12 +4,8 @@
 */
 
 /*
-  CSS tested in Chrome/Firefox/Edge.
-  (yes this indicates I'm developing this on a Windows machine, don't hate me
-  for it, normally I'd use a Mac for web development)
-  Definitely not going to work in IE.
-  Safari? Too lazy to break out the laptop to test.
-  Lazy programmers are good programmers right?
+    CSS tested in Chrome/Firefox/Safari/Edge.
+    Definitely not going to work in IE.
 */
 
 /*
@@ -33,40 +29,54 @@ body {
   /******************/
 
   /* base theme colours */
-  --color-black: #121010;
+  --color-black: #120a06;
   --color-cream: #f0e9da;
-  --color-dark-green: #181b0d;
+  --color-dark-brown: #1a0f0a;
   --color-dark-orange: #864c00;
-  --color-green: #27403d;
-  --color-light-green: #48725c;
+  --color-mid-brown: #7a4a2a;
   --color-orange: #d88f2e;
   --color-white: #f5f5f2;
 
   /* solarized theme colours */
-  --solarized-base0: #808080;
-  --solarized-base03: #1c1c1c;
-  --solarized-base3: #ffffd7;
-  --solarized-magenta: #af005f;
-  --solarized-orange: #e0975d;
-  --solarized-violet: #5f5faf;
-  --solarized-yellow: #af8700;
+  --solarized-base0: #839496;
+  --solarized-base01: #586e75;
+  --solarized-base03: #002b36;
+  --solarized-base3: #fdf6e3;
+  --solarized-cyan: #2aa198;
+  --solarized-magenta: #d33682;
+  --solarized-orange: #cb4b16;
+  --solarized-violet: #6c71c4;
+  --solarized-yellow: #b58900;
 
   /* zenburn theme colours */
-  --zenburn-dark-green: #35473e;
   --zenburn-dark-grey: #3f3f3f;
   --zenburn-dark-pink: #cc9393;
-  --zenburn-green: #709080;
+  --zenburn-mid: #5e5754;
   --zenburn-light-tan: #dcdccc;
   --zenburn-pink: #dca3a3;
   --zenburn-tan: #f0dfaf;
+
+  /* dracula theme colours */
+  --dracula-background: #282a36;
+  --dracula-current-line: #44475a;
+  --dracula-foreground: #f8f8f2;
+  --dracula-comment: #6272a4;
+  --dracula-cyan: #8be9fd;
+  --dracula-light: #f4f3ff;
+  --dracula-orange: #ffb86c;
+  --dracula-pink: #ff79c6;
+  --dracula-purple: #bd93f9;
+  --dracula-red: #ff5555;
+  --dracula-yellow: #f1fa8c;
 
   /*******************/
   /* property styles */
   /*******************/
 
-  --background-color-dark: var(--color-dark-green);
+  --background-color-dark: var(--color-dark-brown);
   --background-color-light: var(--color-cream);
-  --font-color-dark: var(--color-dark-green);
+  --background-color-mid: var(--color-mid-brown);
+  --font-color-dark: var(--color-dark-brown);
   --font-color-light: var(--color-cream);
   --font-color-link-dark: var(--color-black);
   --font-color-link-light: var(--color-cream);
@@ -79,27 +89,43 @@ body {
 .theme-solarized {
   --background-color-dark: var(--solarized-base03);
   --background-color-light: var(--solarized-base3);
-  --font-color-dark: var(--solarized-base0);
-  --font-color-light: var(--solarized-base0);
+  --background-color-mid: var(--solarized-base01);
+  --font-color-dark: var(--solarized-base01);
+  --font-color-light: var(--solarized-base3);
   --font-color-link-dark: var(--solarized-magenta);
-  --font-color-link-light: var(--solarized-magenta);
-  --highlight-color: var(--solarized-orange);
+  --font-color-link-light: var(--solarized-cyan);
+  --highlight-color: var(--solarized-yellow);
 
   /* ctip variable overrides */
-  --ctip-focus: 0px 0px 0px 1px var(--solarized-orange);
+  --ctip-focus: 0px 0px 0px 1px var(--solarized-yellow);
 }
 
 .theme-zenburn {
   --background-color-dark: var(--zenburn-dark-grey);
   --background-color-light: var(--zenburn-light-tan);
+  --background-color-mid: var(--zenburn-mid);
   --font-color-dark: var(--zenburn-dark-grey);
   --font-color-light: var(--zenburn-light-tan);
-  --font-color-link-dark: var(--zenburn-dark-green);
+  --font-color-link-dark: var(--zenburn-dark-grey);
   --font-color-link-light: var(--zenburn-tan);
   --highlight-color: var(--zenburn-pink);
 
   /* ctip variable overrides */
   --ctip-focus: 0px 0px 0px 1px var(--zenburn-pink);
+}
+
+.theme-dracula {
+  --background-color-dark: var(--dracula-background);
+  --background-color-light: var(--dracula-light);
+  --background-color-mid: var(--dracula-current-line);
+  --font-color-dark: var(--dracula-background);
+  --font-color-light: var(--dracula-foreground);
+  --font-color-link-dark: var(--dracula-background);
+  --font-color-link-light: var(--dracula-cyan);
+  --highlight-color: var(--dracula-purple);
+
+  /* ctip variable overrides */
+  --ctip-focus: 0px 0px 0px 1px var(--dracula-purple);
 }
 
 /******************/
@@ -142,7 +168,7 @@ h2 {
 }
 
 h4 {
-  color: var(--color-green);
+  color: var(--highlight-color);
   font-weight: lighter;
   margin-top: 15px;
 }
@@ -193,7 +219,15 @@ i {
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: 200px;
+  width: 290px;
+}
+
+.contact .location {
+  align-items: flex-start;
+  color: var(--font-color-link-light);
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
 }
 
 .theme-picker {
@@ -279,7 +313,6 @@ i {
 /* interests section */
 
 .interests a {
-  color: var(--font-color-link-dark);
   display: inline-block;
   margin: 10px 0;
 }
@@ -288,19 +321,14 @@ i {
   line-height: 1.2em;
 }
 
-/* print version of skill section */
-.skills-print {
-  display: none;
-}
-
 /***************/
 /* Grid Styles */
 /***************/
 
 .main-area {
   display: grid;
-  grid-template-columns: 600px 600px;
-  grid-template-rows: 335px minmax(300px, calc(100% - 535px)) 200px;
+  grid-template-columns: 500px 700px;
+  grid-template-rows: 400px minmax(200px, calc(100% - 740px)) 340px;
   height: 100%;
   margin: 0 auto;
   position: relative;
@@ -313,19 +341,40 @@ i {
   position: relative;
 }
 
-.main-area > header,
-.main-area > section:nth-child(4),
-.main-area > section:nth-child(5),
-.main-area > section:nth-child(6) {
+.main-area > .contact,
+.main-area > .interests {
   background-color: var(--background-color-dark);
   color: var(--font-color-light);
 }
 
-.main-area > section:nth-child(2),
-.main-area > section:nth-child(3),
-.main-area > section:nth-child(7) {
+.main-area > .about {
   background-color: var(--background-color-light);
   color: var(--font-color-dark);
+}
+
+.main-area > .experience {
+  background-color: var(--background-color-mid);
+  color: var(--font-color-light);
+}
+
+.main-area > .contact {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.main-area > .about {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.main-area > .experience {
+  grid-column: 2;
+  grid-row: 1 / 4;
+}
+
+.main-area > .interests {
+  grid-column: 1;
+  grid-row: 3;
 }
 
 .main-area > section h2 {
@@ -353,6 +402,8 @@ i {
   background-color: var(--background-color-light);
   color: var(--font-color-dark);
   font-size: 1.3em;
+  grid-column: auto;
+  grid-row: auto;
   height: calc(100% - 150px);
   left: 0;
   position: absolute;
@@ -366,6 +417,8 @@ i {
 }
 
 .main-area > header.fill-grid {
+  grid-column: auto;
+  grid-row: auto;
   height: 150px;
   left: 0;
   padding: 15px 30px;
@@ -457,31 +510,9 @@ i {
     display: none;
   }
 
-  /* change order of sections at this breakpoint */
-
-  .skills {
-    order: 4;
-  }
-
-  .experience {
-    order: 3;
-  }
-
-  .education {
-    order: 5;
-  }
-
-  .interests {
-    order: 6;
-  }
-
   .contact h1 {
     font-size: 38px;
     height: auto;
-  }
-
-  .main-area .section-content.skills-chart-container {
-    height: 300px;
   }
 }
 
@@ -502,7 +533,7 @@ i {
   h4,
   h5,
   h6 {
-    color: var(--color-dark-green);
+    color: var(--color-dark-brown);
     page-break-after: avoid;
     page-break-inside: avoid;
   }
@@ -525,56 +556,9 @@ i {
   }
 
   .main-area > header,
-  .main-area > section:nth-child(2),
-  .main-area > section:nth-child(3),
-  .main-area > section:nth-child(4),
-  .main-area > section:nth-child(5),
-  .main-area > section:nth-child(6),
-  .main-area > section:nth-child(7) {
+  .main-area > section {
     background-color: white;
     color: var(--color-black);
-  }
-
-  .skills-print {
-    page-break-after: always;
-  }
-
-  .main-area .skills {
-    display: none;
-  }
-
-  .main-area .skills-print {
-    display: block;
-  }
-
-  .main-area .skills-print .section-content {
-    padding: 30px;
-  }
-
-  .main-area .skills-print table,
-  .main-area .skills-print tr {
-    width: 100%;
-  }
-
-  .main-area .skills-print td {
-    padding-bottom: 10px;
-  }
-
-  .main-area .skills-print tr td:first-child {
-    font-weight: bold;
-    max-width: 100px;
-  }
-
-  .main-area .skills-print tfoot {
-    font-weight: bold;
-  }
-
-  .main-area .skills-print tfoot tr td:nth-child(3) {
-    text-align: center;
-  }
-
-  .main-area .skills-print tfoot tr td:last-child {
-    text-align: right;
   }
 
   .panel-container,

@@ -1,12 +1,18 @@
 {
-    "version": "0.2",
-    "ignorePaths": [],
-    "dictionaryDefinitions": [],
-    "dictionaries": [],
-    "words": [
-        "ctip",
-        "ioncache"
-    ],
-    "ignoreWords": [],
-    "import": []
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "colour",
+    "colours",
+    "commitlint",
+    "ctip",
+    "ioncache",
+    "mjubenville",
+    "oxfmt",
+    "oxlint"
+  ],
+  "ignoreWords": [],
+  "import": []
 }

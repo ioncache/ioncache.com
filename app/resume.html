@@ -9,19 +9,49 @@
     <meta name="author" content="Mark Jubenville <ioncache@gmail.com>" />
     <meta
       name="description"
-      content="Resume? Résumé? Abstract of Mark Jubenville"
-    />
-    <meta
-      name="keywords"
-      content="résumé, resume, abstract, CV, curriculum vitae, work history, synopsis"
+      content="Resume of Mark Jubenville, a Principal Developer with 15+ years of experience in full stack web development."
     />
     <meta
       name="viewport"
-      content="width = device-width, user-scalable = yes, initial-scale = 1.0"
+      content="width=device-width, user-scalable=yes, initial-scale=1.0"
     />
 
+    <link rel="canonical" href="https://ioncache.com/resume.html" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@4.4.6/dist/css/ionicons.min.css" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://ioncache.com/resume.html" />
+    <meta property="og:title" content="Mark Jubenville - Principal Developer" />
+    <meta
+      property="og:description"
+      content="Resume of Mark Jubenville, a Principal Developer with 15+ years of experience in full stack web development."
+    />
+    <meta
+      property="og:image"
+      content="https://ioncache.com/apple-touch-icon.png"
+    />
+    <meta property="og:locale" content="en_CA" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Mark Jubenville - Principal Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Resume of Mark Jubenville, a Principal Developer with 15+ years of experience in full stack web development."
+    />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/ionicons@4.4.6/dist/css/ionicons.min.css"
+      integrity="sha384-y5QlCpvrWOHRatbdweSP5VT8RdMRL4e5Vb/DkOqoNBYYd1Rr+AP5IcX2hB+yFxKD"
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="lib/ctips/ctips.css" />
@@ -42,7 +72,7 @@
          deferring the class change until later
       */
       if (window.getTheme && window.setTheme) {
-        setTheme(getTheme() || 'default')
+        setTheme(getTheme() || 'default');
       }
     </script>
 
@@ -65,6 +95,7 @@
             <select id="themePicker" class="theme-picker">
               <option value="" disabled selected>Choose Theme</option>
               <option value="default">Default</option>
+              <option value="dracula">Dracula</option>
               <option value="solarized">Solarized</option>
               <option value="zenburn">Zenburn</option>
             </select>
@@ -110,22 +141,47 @@
         <div class="section-content">
           <ul>
             <li>
-              <a href="mailto:ioncache@gmail.com"
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="mailto:ioncache@gmail.com"
                 ><i class="icon ion-md-mail"></i>&nbsp;ioncache@gmail.com</a
               >
             </li>
 
             <li>
-              <a href="https://ioncache.com"
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://ioncache.com"
                 ><i class="icon ion-md-globe"></i>&nbsp;ioncache.com</a
               >
             </li>
 
             <li>
-              <a href="https://github.com/ioncache"
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/ioncache"
                 ><i class="icon ion-logo-octocat"></i
                 >&nbsp;github.com/ioncache</a
               >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://linkedin.com/in/mjubenville"
+                ><i class="icon ion-logo-linkedin"></i
+                >&nbsp;linkedin.com/in/mjubenville</a
+              >
+            </li>
+
+            <li>
+              <span class="location">
+                <i class="icon ion-md-pin"></i>
+                <span>Toronto, Canada<br />(open to remote / hybrid)</span>
+              </span>
             </li>
           </ul>
 
@@ -148,49 +204,25 @@
 
         <div class="section-content">
           <p>
-            Recently, I have dedicated my efforts to collaborating with teams
-            on developing dynamic, client-facing frontend applications,
-            seamlessly integrating with robust backend APIs.
+            Over the years I've gravitated toward companies where the work has a
+            tangible upside for real people -- reducing food waste, helping
+            conserve energy, improving access to healthcare. That's where I want
+            to keep going.
           </p>
 
           <p>
-            I take pride in empowering my team to take full ownership of the
-            product lifecycle—from the initial vision and design through to
-            architecture, infrastructure configuration, deployments, and
-            comprehensive monitoring and observability.
+            On the technical side I work best as a generalist across the full
+            stack, and mentorship is a big part of how I operate. Watching
+            someone work through a hard problem and come out the other side is
+            one of my favorite parts of the job.
           </p>
 
           <p>
-            I am passionate about mentoring and teaching, and I'm eager to join
-            a role where I can continue guiding colleagues through professional
-            and personal growth, helping them overcome challenges and hone
-            their skills.
+            I'm spending a lot of time thinking about AI too -- how to integrate
+            it thoughtfully and where it actually adds value, rather than just
+            adds complexity. The hype may be a bit overblown, but genuinely
+            excited about what it can do when it's used well.
           </p>
-
-          <p>
-            I am eager to join a forward-thinking organization that embraces
-            modern application development, where I can drive innovative
-            feature enhancements, explore emerging technologies, and tackle
-            exciting challenges.
-          </p>
-        </div>
-      </section>
-
-      <section class="skills">
-        <button
-          aria-label="Expand / Collapse"
-          class="toggle-fill-grid"
-          data-ctip="Expand / Collapse"
-          data-ctip-position="right"
-        >
-          <i class="icon ion-md-expand"></i>
-          <i class="icon ion-md-contract"></i>
-        </button>
-
-        <h2>Skills</h2>
-
-        <div class="section-content skills-chart-container">
-          <canvas id="skillsChart"></canvas>
         </div>
       </section>
 
@@ -210,16 +242,35 @@
         <div class="section-content">
           <div class="experience-details">
             <h3>
+              Principal Developer <br />
+              Coral <br />
+              April 2026 - Present
+            </h3>
+
+            <p>
+              Full stack development on a virtual healthcare platform
+              specializing in personalized care for Canadian women navigating
+              perimenopause, menopause, and related health concerns.
+            </p>
+
+            <p>
+              Work spans a node/fastify backend and react/MUI frontend, with
+              MongoDB, Kubernetes, and an expanding focus on AI integrations.
+            </p>
+          </div>
+
+          <div class="experience-details">
+            <h3>
               Staff Software Engineer <br />
               Braxted Group <br />
               September 2024 - February 2025
             </h3>
 
             <p>
-              Collaborated within a focused, agile team to design and develop
-              a Minimum Viable Product (MVP) serving as a compelling
-              demonstration platform, instrumental in engaging Board members
-              and attracting potential venture capital investors.
+              Collaborated within a focused, agile team to design and develop a
+              Minimum Viable Product (MVP) serving as a compelling demonstration
+              platform, instrumental in engaging Board members and attracting
+              potential venture capital investors.
             </p>
           </div>
 
@@ -231,23 +282,20 @@
             </h3>
 
             <p>
-              Primarily technical lead on a b2c application helping grocery stores
-              sell near to expiry food at low prices to consumers. Helping shoppers
-              save money at the same time as preventing excess food waste.
+              Primary technical lead on a b2c application helping grocery stores
+              sell near-to-expiry food at reduced prices to consumers, reducing
+              food waste while helping shoppers save money.
             </p>
 
             <p>
-              I highly recommend trying it out yourself! Both Canadian and US grocers
-              enrolled with the app. Download at <a href="https://flashfood.com"><i class="icon ion-md-globe"></i>&nbsp;flashfood.com</a>
+              Most of my time in this role was split amongst medium term
+              planning, technical design, liaising with stakeholders, and
+              coding.
             </p>
 
             <p>
-              Most of my time in this role was split amongst medium term planning,
-              technical design, liaising with stakeholders, and coding.
-            </p>
-
-            <p>
-              Coding work in this role was primarily backend API focused, in a node/typescript/express/fastify environment.
+              Technical work was primarily backend API focused, working in a
+              node/typescript/express/fastify stack.
             </p>
           </div>
 
@@ -278,22 +326,22 @@
 
           <div class="experience-details">
             <h3>
-              Tech Lead <br />
-              Utility Services <br />
               ecobee, Toronto, Canada <br />
-              February 2021 - July 2021
+              January 2019 - July 2021
             </h3>
+
+            <h4>Tech Lead, Utility Services (February 2021 - July 2021)</h4>
 
             <p>
               Collaborated with Engineering and Product Managers to balance
-              stakeholder expectations, prioritize features over technical
-              debt, and coordinate smooth, impactful deployments across
-              internal teams.
+              stakeholder expectations, prioritize features over technical debt,
+              and coordinate smooth, impactful deployments across internal
+              teams.
             </p>
 
             <p>
-              Streamlined our development process through targeted 1:1 and
-              group sessions, gathering and sharing actionable feedback with
+              Streamlined our development process through targeted 1:1 and group
+              sessions, gathering and sharing actionable feedback with
               leadership and stakeholders.
             </p>
 
@@ -302,15 +350,10 @@
               technical learning opportunities, and growth-focused discussions
               to accelerate both their career and personal development.
             </p>
-          </div>
 
-          <div class="experience-details">
-            <h3>
-              Staff Web Developer <br />
-              SmartBuildings <br />
-              ecobee, Toronto, Canada <br />
-              January 2019 - February 2021
-            </h3>
+            <h4>
+              Staff Web Developer, SmartBuildings (January 2019 - February 2021)
+            </h4>
 
             <p>
               Full stack development on a B2B application giving small to mid
@@ -321,43 +364,10 @@
             </p>
 
             <p>
-              Design and implementation of new public facing API for the
-              SmartBuildings application, allowing external clients the ability
-              to manage their SmartBuildings account programmatically.
+              Design and implementation of a new public facing API for the
+              SmartBuildings application, allowing external clients to manage
+              their account programmatically.
             </p>
-
-            <h5>Relevant Links</h5>
-
-            <ul>
-              <li>
-                SmartBuildings:
-                <a href="https://sb.ecobee.com/"
-                  ><i class="icon ion-md-globe"></i>&nbsp;sb.ecobee.com</a
-                >
-              </li>
-
-              <li>
-                SmartBuildings Public API Documentation:
-                <a href="https://docs.sb.ecobee.com/"
-                  ><i class="icon ion-md-globe"></i>&nbsp;docs.sb.ecobee.com</a
-                >
-              </li>
-
-              <li>
-                SmartBuildings Public API:
-                <a href="https://api.sb.ecobee.com/"
-                  ><i class="icon ion-md-globe"></i>&nbsp;api.sb.ecobee.com</a
-                >
-              </li>
-
-              <li>
-                SmartBuildings Public API Specification:
-                <a href="https://api.sb.ecobee.com/docs/openapi.json"
-                  ><i class="icon ion-md-globe"></i
-                  >&nbsp;api.sb.ecobee.com/docs/openapi.json</a
-                >
-              </li>
-            </ul>
           </div>
 
           <div class="experience-details">
@@ -368,8 +378,8 @@
             </h3>
 
             <p>
-              Frontend javascript application development on a number of internal
-              and external facing applications.
+              Frontend javascript application development on a number of
+              internal and external facing applications.
             </p>
 
             <p>
@@ -393,121 +403,7 @@
               Backend API and application development to support new and legacy
               applications.
             </p>
-
-            <h5>Relevant Links</h5>
-
-            <ul>
-              <li>
-                Registration:
-                <a href="https://register.oanda.com"
-                  ><i class="icon ion-md-globe"></i>&nbsp;register.oanda.com</a
-                >
-              </li>
-
-              <li>
-                Trading Platform:
-                <a href="https://trade.oanda.com"
-                  ><i class="icon ion-md-globe"></i>&nbsp;trade.oanda.com</a
-                >
-              </li>
-            </ul>
           </div>
-
-          <div class="experience-details">
-            <h3>
-              Web Developer <br />
-              Raybec Communications, Toronto, Canada <br />
-              March 2008 - August 2011
-            </h3>
-
-            <p>
-              Worked on a small team of engineers, where our main focus was
-              creating a one-to-one email based client relationship application.
-              This was a Javascript application using a combination of AJAX and
-              server side (Perl) code for interactivity.
-            </p>
-
-            <p>
-              Development of smaller-scale web-based applications for clients.
-            </p>
-
-            <p>
-              Maintenance of and modifications to legacy application software,
-              ranging in size and scope from database population and cron job
-              creation to more full-fledged variable data PDF generation
-              software.
-            </p>
-          </div>
-
-          <div class="experience-details">
-            <h3>
-              Production Coordinator <br />
-              Raybec Communications, Toronto, Canada <br />
-              September 2004 - March 2008
-            </h3>
-
-            <p>
-              Merging of large data sets with creative templates to create large
-              variable record PDF files. Projects completed using both purchased
-              variable data software and in-house developed PDF generation
-              scripts.
-            </p>
-
-            <p>
-              Design of marketing material, including early mock-ups and working
-              closely with clients to finalize their design needs.
-            </p>
-
-            <p>
-              Production of all marketing material on in-house production
-              equipment (mainly Xerox/Fiery hardware), including alignment,
-              colour correction and hardware maintenance.
-            </p>
-          </div>
-
-          <div class="experience-details" style="break-after: always">
-            <h3>
-              Graphic Designer <br />
-              Data ImageNet, Toronto, Canada <br />
-              December 2000 - September 2004
-            </h3>
-
-            <p>
-              Design of print-ready marketing material, including business
-              cards, logos, newsletters, posters, etc.
-            </p>
-
-            <p>
-              Prepress work on client-supplied files to ensure print quality,
-              colour consistency and overall adherence to client supplied
-              criteria.
-            </p>
-
-            <p>
-              Low-level variable data programming for merging data with
-              predefined document templates.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="education">
-        <button
-          aria-label="Expand / Collapse"
-          class="toggle-fill-grid"
-          data-ctip="Expand / Collapse"
-          data-ctip-position="right"
-        >
-          <i class="icon ion-md-expand"></i>
-          <i class="icon ion-md-contract"></i>
-        </button>
-
-        <h2>Education</h2>
-
-        <div class="section-content">
-          <p>University of Toronto</p>
-          <p>Computer Science</p>
-          <p>1996-1998</p>
         </div>
       </section>
 
@@ -526,90 +422,77 @@
 
         <div class="section-content">
           <h4>
-            ioncache.com website <span>contains the source for this page</span>
+            ioncache.com
+            <span>the source for this page</span>
           </h4>
           <div>
-            <a href="https://github.com/ioncache/ioncache.com/"
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/ioncache/ioncache.com/"
               ><i class="icon ion-md-globe"></i
               >&nbsp;github.com/ioncache/ioncache.com</a
             >
           </div>
 
           <h4>
+            data-sanitization
+            <span
+              >TypeScript library for obfuscating, removing, and securing
+              sensitive data</span
+            >
+          </h4>
+          <div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/ioncache/data-sanitization"
+              ><i class="icon ion-md-globe"></i
+              >&nbsp;github.com/ioncache/data-sanitization</a
+            >
+          </div>
+
+          <h4>
+            git-diff-stat-extended
+            <span
+              >extended git diff stats CLI with breakdown by implementation,
+              tests, comments, docs, and config</span
+            >
+          </h4>
+          <div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/ioncache/git-diff-stat-extended"
+              ><i class="icon ion-md-globe"></i
+              >&nbsp;github.com/ioncache/git-diff-stat-extended</a
+            >
+          </div>
+
+          <h4>
             log-defer
             <span
-              >Javascript library to generate log object compatible with
-              <a href="https://github.com/hoytech/Log-Defer-Viz"
+              >javascript library to generate log objects compatible with
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/hoytech/Log-Defer-Viz"
                 ><i class="icon ion-md-globe"></i>&nbsp;log-defer-viz</a
               ></span
             >
           </h4>
           <div>
-            <a href="https://github.com/ioncache/log-defer/"
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/ioncache/log-defer/"
               ><i class="icon ion-md-globe"></i
               >&nbsp;github.com/ioncache/log-defer</a
             >
           </div>
-
-          <h4>
-            Tag-Handler
-            <span
-              >a jQuery plugin used for managing tag-type metadata; wow this is
-              old, one of the first bits of jQuery I ever wrote</span
-            >
-          </h4>
-          <div>
-            <a href="https://ioncache.github.io/Tag-Handler/"
-              ><i class="icon ion-md-globe"></i
-              >&nbsp;ioncache.github.io/Tag-Handler</a
-            >
-          </div>
-
-          <h4>
-            CPAN Distributions
-            <span
-              >full disclosure, other than code reviews, I don't do a lot of
-              perl these days</span
-            >
-          </h4>
-
-          <h4>
-            DBIx::Class::AuditLog
-            <span>simple database action history logging</span>
-          </h4>
-          <div>
-            <a href="https://metacpan.org/module/DBIx::Class::AuditLog"
-              ><i class="icon ion-md-globe"></i
-              >&nbsp;metacpan.org/module/DBIx::Class::AuditLog</a
-            >
-          </div>
-          <h4>
-            Plack::Middleware::HTMLify
-            <span>middleware to convert a non-html web page to html</span>
-          </h4>
-          <div>
-            <a href="https://metacpan.org/module/Plack::Middleware::HTMLify"
-              ><i class="icon ion-md-globe"></i
-              >&nbsp;metacpan.org/module/Plack::Middleware::HTMLify</a
-            >
-          </div>
-
-          <h4>
-            Chess
-            <span
-              >Took up chess again recently after many years away from it. Hard
-              stuck in the mid 1700 range. I may have to spend some time on
-              this.</span
-            >
-          </h4>
         </div>
       </section>
     </div>
-    <!-- defer loading of these scripts until the page has been processed as they are not needed until this point -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="scripts/resume.js"></script>
-    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
   </body>
 </html>
-

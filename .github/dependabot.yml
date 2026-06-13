@@ -1,16 +1,66 @@
 version: 2
+
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "10:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: snyk
-    versions:
-    - 1.559.0
-    - 1.563.0
-    - 1.564.0
-    - 1.567.0
-    - 1.570.0
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'cron'
+      cronjob: '0 9 1-7 * 1'
+      timezone: 'America/Toronto'
+
+    open-pull-requests-limit: 3
+
+    commit-message:
+      prefix: 'chore'
+      include: 'scope'
+
+    groups:
+      oxlint:
+        patterns:
+          - 'oxlint'
+          - 'oxlint-*'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      formatting:
+        patterns:
+          - 'oxfmt'
+          - '@oxfmt/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      commit-tooling:
+        patterns:
+          - '@commitlint/*'
+          - 'husky'
+          - 'lint-staged'
+          - 'markdownlint-cli2'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      npm-dev-minor-and-patch:
+        dependency-type: 'development'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'cron'
+      cronjob: '0 9 1-7 * 1'
+      timezone: 'America/Toronto'
+
+    open-pull-requests-limit: 2
+
+    commit-message:
+      prefix: 'ci'
+      include: 'scope'
+
+    groups:
+      github-actions:
+        patterns:
+          - '*'
