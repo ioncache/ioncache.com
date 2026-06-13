@@ -51,17 +51,4 @@ function addThemePickerListener() {
   }
 }
 
-/*
-  wait until the page has finished loading before adding the listener on the theme picker dropdown
-  so that the elements exist by the time the listener is added
-*/
-if (window.onload) {
-  let currentOnloadEvent = window.onload;
-  let newOnLoadEvent = function (e) {
-    currentOnloadEvent(e);
-    addThemePickerListener();
-  };
-  window.onload = newOnLoadEvent;
-} else {
-  window.onload = addThemePickerListener;
-}
+window.addEventListener('load', addThemePickerListener);

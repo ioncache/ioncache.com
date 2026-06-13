@@ -40,7 +40,8 @@ body {
   /* !important here as the imported tooltip css is also using !important...
      feels bad, I should use a different tooltip css library... or roll my own
   */
-  font-family: 'Courier New', Courier, monospace !important; /* stylelint-disable-line declaration-no-important */
+  font-family:
+    'Courier New', Courier, monospace !important;
 }
 
 @keyframes bounce {
